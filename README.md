@@ -35,9 +35,9 @@ AI has been used to generate question and to give certain snippet examples + exp
 
 ## Missing implementation
 
-- multiple pages ?
-- login sytem ?
-- better algo logic
-- modular (black box) questions
-- tailored assessment question and answers (AI generated for now) 
-- better front end design
+- Multiple pages ?
+- Login sytem ?
+- Better algo logic
+- Modular (black box) questions
+- Tailored assessment question and answers (AI generated for now) 
+- Better front end design
