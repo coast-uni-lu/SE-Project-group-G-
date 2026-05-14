@@ -1,0 +1,245 @@
+{
+  "version": 2,
+  "items": [
+    {
+      "orderIndex": 1,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I can infer that if all A are B and all B are C, then all A are C."
+    },
+    {
+      "orderIndex": 2,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I can identify when a conclusion does not follow from the given facts."
+    },
+    {
+      "orderIndex": 3,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I can spot contradictions between two statements."
+    },
+    {
+      "orderIndex": 4,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I understand what the statement 'if P then Q' means."
+    },
+    {
+      "orderIndex": 5,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I can use a counterexample to disprove a claim."
+    },
+    {
+      "orderIndex": 6,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I can solve simple number or symbol pattern puzzles."
+    },
+    {
+      "orderIndex": 7,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I can distinguish assumptions from confirmed facts."
+    },
+    {
+      "orderIndex": 8,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I can explain why one argument is stronger than another."
+    },
+    {
+      "orderIndex": 9,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I can reason through problems where exactly one of two statements is true."
+    },
+    {
+      "orderIndex": 10,
+      "category": "LOGICAL_REASONING",
+      "scale": 5,
+      "content": "I can break a reasoning problem into smaller logical steps."
+    },
+    {
+      "orderIndex": 11,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I am comfortable with order of operations (PEMDAS/BODMAS)."
+    },
+    {
+      "orderIndex": 12,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I can add, subtract, multiply, and divide fractions."
+    },
+    {
+      "orderIndex": 13,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I can calculate percentages such as discounts or interest."
+    },
+    {
+      "orderIndex": 14,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I can solve simple linear equations like 3x + 2 = 14."
+    },
+    {
+      "orderIndex": 15,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I can work with ratios and proportions."
+    },
+    {
+      "orderIndex": 16,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I am comfortable with negative numbers and absolute value."
+    },
+    {
+      "orderIndex": 17,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I can work with powers and roots (for example 2^5 or square root of 49)."
+    },
+    {
+      "orderIndex": 18,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I can read values from a basic graph or table."
+    },
+    {
+      "orderIndex": 19,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I understand a function as an input-output rule."
+    },
+    {
+      "orderIndex": 20,
+      "category": "MATHS_BASICS",
+      "scale": 5,
+      "content": "I usually check whether my final numeric answer is reasonable."
+    },
+    {
+      "orderIndex": 21,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 3,
+      "content": "I am familiar with programming languages such as Python, Java, or JavaScript."
+    },
+    {
+      "orderIndex": 22,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 3,
+      "content": "I understand what a variable is in programming."
+    },
+    {
+      "orderIndex": 23,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 3,
+      "content": "I understand what a boolean value (true/false) is."
+    },
+    {
+      "orderIndex": 24,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 3,
+      "content": "I understand what an if/else decision does in a program."
+    },
+    {
+      "orderIndex": 25,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 5,
+      "content": "I understand why loops are useful in programs."
+    },
+    {
+      "orderIndex": 26,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 5,
+      "content": "I understand what a function or procedure is."
+    },
+    {
+      "orderIndex": 27,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 5,
+      "content": "I understand input and output in a program step."
+    },
+    {
+      "orderIndex": 28,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 3,
+      "content": "I understand what a list or array is used for."
+    },
+    {
+      "orderIndex": 29,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 3,
+      "content": "I understand what a bug is and why debugging is helpful."
+    },
+    {
+      "orderIndex": 30,
+      "category": "PROGRAMMING_CONCEPTS",
+      "scale": 5,
+      "content": "I can follow a simple algorithm written as ordered steps."
+    },
+    {
+      "orderIndex": 31,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "When solving a hard task, I split it into smaller sub-problems."
+    },
+    {
+      "orderIndex": 32,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "I test ideas with simple examples before finalizing them."
+    },
+    {
+      "orderIndex": 33,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "I can follow multi-step instructions accurately."
+    },
+    {
+      "orderIndex": 34,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "I look for patterns from previously solved problems."
+    },
+    {
+      "orderIndex": 35,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "I can explain my approach clearly to another person."
+    },
+    {
+      "orderIndex": 36,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "I test edge cases such as 0, 1, or very large values."
+    },
+    {
+      "orderIndex": 37,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "If a solution fails, I can locate the step causing the issue."
+    },
+    {
+      "orderIndex": 38,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "I can compare two methods and choose the clearer one."
+    },
+    {
+      "orderIndex": 39,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "I keep my work organized while solving longer tasks."
+    },
+    {
+      "orderIndex": 40,
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "scale": 5,
+      "content": "I try a different strategy when my first attempt fails."
+    }
+  ]
+}

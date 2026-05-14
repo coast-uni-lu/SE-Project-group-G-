@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS Quiz Project</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #eeeeee; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border: 1px solid #cccccc; padding: 20px; }
+        .hidden { display: none; }
+        .block { margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid #ececec; }
+        .tag { display: inline-block; background: #2f65c8; color: #fff; padding: 3px 8px; font-size: 12px; }
+        button { border: 1px solid #1f7a42; background: #2da75b; color: #fff; padding: 9px 12px; cursor: pointer; }
+        input[type="text"] { padding: 8px; width: 240px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border-bottom: 1px solid #ececec; padding: 8px; text-align: left; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>CS Quiz Project</h1>
+
+    <section id="nicknameStep">
+        <p>This is our second year Software Engineering project to assess if students are ready for a cursus in CS/BINFO and recommend books based on what they need to prepare for if they want to.</p>
+        <p>Enter a nickname for the leaderboard:</p>
+        <input id="nicknameInput" type="text" maxlength="30" placeholder="nickname" />
+        <button id="confirmNicknameBtn" onclick="startAssessment()">Confirm nickname</button>
+    </section>
+
+    <section id="assessmentStep" class="hidden">
+        <h2>Short starter questions</h2>
+        <div id="assessmentQuestions"></div>
+        <button onclick="submitAssessment()">Continue to quiz</button>
+    </section>
+
+    <section id="quizStep" class="hidden">
+        <h2>Main quiz</h2>
+        <div id="quizQuestions"></div>
+        <button onclick="submitQuiz()">Submit quiz</button>
+    </section>
+
+    <section id="resultStep" class="hidden">
+        <h2>Results</h2>
+        <p id="resultSummary"></p>
+        <pre id="assessmentScores"></pre>
+        <h3>Leaderboard</h3>
+        <table>
+            <thead><tr><th>Nickname</th><th>Score</th><th>Correct</th><th>Time</th></tr></thead>
+            <tbody id="leaderboardBody"></tbody>
+        </table>
+    </section>
+</div>
+
+<script>
+    let nickname = "";
+    let assessmentItems = [];
+    let quizQuestions = [];
+    let sessionId = "";
+
+    // only shows one page section and hides the other ones for the rest of the steps
+    function showStep(id) {
+        ["nicknameStep", "assessmentStep", "quizStep", "resultStep"].forEach(step => {
+            document.getElementById(step).classList.toggle("hidden", step !== id);
+        });
+    }
+
+    // enum names formating
+    function formatCategoryLabel(category) {
+        return category
+            .toLowerCase()
+            .split('_')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    }
+
+    async function startAssessment() {
+        nickname = document.getElementById("nicknameInput").value.trim();
+        if (!nickname) {
+            alert("Nickname is required.");
+            return;
+        }
+
+        const btn = document.getElementById("confirmNicknameBtn");
+        const oldText = btn.innerText;
+        btn.disabled = true;
+        btn.innerText = "Loading...";
+
+        try {
+            const res = await fetch('/api/v1/assessment/questions');
+            if (!res.ok) {
+                alert(`Could not load questions. HTTP ${res.status}`);
+                return;
+            }
+
+            assessmentItems = await res.json();
+            const root = document.getElementById('assessmentQuestions');
+            root.innerHTML = '';
+
+            assessmentItems.forEach((item, idx) => {
+                root.innerHTML += `
+                    <div class="block">
+                        <span class="tag">${formatCategoryLabel(item.category)}</span>
+                        <p><strong>${idx + 1}.</strong> ${item.content}</p>
+                        ${item.options.map((option, optionIndex) =>
+                            `<label><input type="radio" name="assessment-${item.id}" value="${optionIndex}" ${optionIndex === 0 ? 'checked' : ''}> ${option}</label><br>`).join('')}
+                    </div>
+                `;
+            });
+            showStep('assessmentStep');
+        } catch (e) {
+            console.error('Failed to load assessment questions', e);
+            alert("Network/server error while loading assessment questions. Please try again.");
+        } finally {
+            btn.disabled = false;
+            btn.innerText = oldText;
+        }
+    }
+
+    async function submitAssessment() {
+        const answers = {};
+        for (const item of assessmentItems) {
+            const selected = document.querySelector(`input[name="assessment-${item.id}"]:checked`);
+            if (!selected) {
+                alert('Please answer all assessment items.');
+                return;
+            }
+            answers[item.id] = Number(selected.value);
+        }
+
+        const res = await fetch('/api/v1/assessment/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nickname, answers })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            alert(data.error || 'Failed to submit assessment');
+            return;
+        }
+
+        sessionId = data.sessionId;
+        await loadQuiz();
+    }
+
+    async function loadQuiz() {
+        const res = await fetch(`/api/v1/quiz?sessionId=${encodeURIComponent(sessionId)}`);
+        quizQuestions = await res.json();
+        const root = document.getElementById('quizQuestions');
+        root.innerHTML = '';
+
+        quizQuestions.forEach((question, idx) => {
+            root.innerHTML += `
+                <div class="block">
+                    <span class="tag">${formatCategoryLabel(question.category)} | Diff ${question.difficulty}</span>
+                    <p><strong>${idx + 1}.</strong> ${question.content}</p>
+                    ${question.options.map((option, optionIndex) =>
+                        `<label><input type="radio" name="quiz-${question.id}" value="${optionIndex}"> ${option}</label><br>`).join('')}
+                </div>
+            `;
+        });
+        showStep('quizStep');
+    }
+
+    async function submitQuiz() {
+        const answers = {};
+        for (const question of quizQuestions) {
+            const selected = document.querySelector(`input[name="quiz-${question.id}"]:checked`);
+            if (!selected) {
+                alert('Please answer all quiz questions.');
+                return;
+            }
+            answers[question.id] = Number(selected.value);
+        }
+
+        const res = await fetch('/api/v1/quiz/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sessionId, answers })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            alert(data.error || 'Failed to submit quiz');
+            return;
+        }
+
+        document.getElementById('resultSummary').innerText =
+            `${data.nickname}: ${data.finalScore}% (${data.correctAnswers}/${data.totalQuestions})`;
+        document.getElementById('assessmentScores').innerText = JSON.stringify(data.AssessmentScores, null, 2);
+
+        const lbRes = await fetch('/api/v1/leaderboard?limit=10');
+        const leaderboard = await lbRes.json();
+        const tbody = document.getElementById('leaderboardBody');
+        tbody.innerHTML = leaderboard.map(row => `
+            <tr>
+              <td>${row.nickname}</td>
+              <td>${row.finalScore}%</td>
+              <td>${row.correctAnswers}/${row.totalQuestions}</td>
+              <td>${new Date(row.timestamp).toLocaleString()}</td>
+            </tr>
+        `).join('');
+
+        showStep('resultStep');
+    }
+</script>
+</body>
+</html>

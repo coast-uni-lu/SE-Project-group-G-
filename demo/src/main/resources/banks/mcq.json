@@ -1,0 +1,1411 @@
+{
+  "version": 2,
+  "questions": [
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 1,
+      "content": "If all birds have wings and a sparrow is a bird, what is true?",
+      "options": [
+        "A sparrow has wings",
+        "A sparrow has fins",
+        "No conclusion can be made"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "deduction"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 1,
+      "content": "Exactly one statement is true: (A) The light is on. (B) The light is off. If A is true, B is:",
+      "options": [
+        "True",
+        "False",
+        "Unknown"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "xor"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 2,
+      "content": "Which number comes next: 2, 4, 8, 16, ?",
+      "options": [
+        "18",
+        "24",
+        "32",
+        "34"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "pattern"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 2,
+      "content": "If it rains, the ground gets wet. The ground is not wet. What follows?",
+      "options": [
+        "It rained",
+        "It did not rain",
+        "It may or may not have rained"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "implication"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 2,
+      "content": "Which is a contradiction?",
+      "options": [
+        "P and not P",
+        "P or not P",
+        "If P then P"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "logic"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 2,
+      "content": "All squares are rectangles. Some rectangles are blue. Which must be true?",
+      "options": [
+        "Some squares are blue",
+        "All squares are rectangles",
+        "No rectangles are blue"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "sets"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 3,
+      "content": "A code is made of 3 letters. First can be A or B. Second must be C. Third can be D or E. How many codes?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "counting"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 3,
+      "content": "Which pair has the same relationship as \"book : read\"?",
+      "options": [
+        "song : listen",
+        "car : road",
+        "cup : table"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "analogy"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 2,
+      "content": "Which argument is strongest?",
+      "options": [
+        "\"Many people think so\"",
+        "\"It follows directly from the given data\"",
+        "\"It sounds correct\""
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "argument"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 2,
+      "content": "If every student submitted homework and Lina is a student, then:",
+      "options": [
+        "Lina submitted homework",
+        "Lina did not submit homework",
+        "Cannot determine"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "deduction"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 3,
+      "content": "Find the odd one out: triangle, square, circle, carrot",
+      "options": [
+        "triangle",
+        "circle",
+        "carrot",
+        "square"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "classification"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 3,
+      "content": "If A>B and B>C, which is always true?",
+      "options": [
+        "C>A",
+        "A>C",
+        "A=C"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "ordering"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 3,
+      "content": "A statement that disproves \"all swans are white\" is:",
+      "options": [
+        "One white swan",
+        "One black swan",
+        "Many white swans"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "counterexample"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 4,
+      "content": "If two propositions are both true, value of (P AND Q) is:",
+      "options": [
+        "True",
+        "False",
+        "Unknown"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "truth-table"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 3,
+      "content": "Sequence: 1, 3, 6, 10, ?",
+      "options": [
+        "12",
+        "14",
+        "15",
+        "16"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "pattern"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 4,
+      "content": "If no gamers are early sleepers, and Tom is an early sleeper, then Tom is:",
+      "options": [
+        "A gamer",
+        "Not a gamer",
+        "Possibly a gamer"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "syllogism"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 2,
+      "content": "Which is an assumption in \"The quiz score improved because she practiced\"?",
+      "options": [
+        "She practiced",
+        "Practice can improve scores",
+        "The quiz existed"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "assumption"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 3,
+      "content": "A fair coin is tossed twice. How many total outcomes?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "8"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "counting"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 4,
+      "content": "If P implies Q and Q implies R, then P implies:",
+      "options": [
+        "Q only",
+        "R",
+        "not R"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "transitivity"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 3,
+      "content": "What comes next: AZ, BY, CX, ?",
+      "options": [
+        "DW",
+        "DX",
+        "EV"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "pattern"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 4,
+      "content": "Which statement is equivalent to \"not (P or Q)\"?",
+      "options": [
+        "not P and not Q",
+        "not P or not Q",
+        "P and Q"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "de-morgan"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 3,
+      "content": "In a race, Ana finished ahead of Ben but behind Chlo\u00e9. Order is:",
+      "options": [
+        "Ana, Chlo\u00e9, Ben",
+        "Chlo\u00e9, Ana, Ben",
+        "Ben, Ana, Chlo\u00e9"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "ordering"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 4,
+      "content": "If exactly one of X and Y is true, and Y is false, X is:",
+      "options": [
+        "True",
+        "False",
+        "Unknown"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "xor"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 5,
+      "content": "A rule says \"admit if age >= 16 and has pass\". Person age 17 without pass is:",
+      "options": [
+        "Admitted",
+        "Not admitted",
+        "Need more data"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "conditions"
+      ]
+    },
+    {
+      "category": "LOGICAL_REASONING",
+      "difficulty": 5,
+      "content": "All robots are machines. No machine is alive. Which follows?",
+      "options": [
+        "Some robots are alive",
+        "No robots are alive",
+        "All alive things are robots"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "syllogism"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 1,
+      "content": "What is 30% of 50?",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "25"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "percent"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 1,
+      "content": "Solve: 5x = 35",
+      "options": [
+        "5",
+        "6",
+        "7"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "algebra"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 1,
+      "content": "What is 12 + 18?",
+      "options": [
+        "20",
+        "28",
+        "30"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "arithmetic"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 2,
+      "content": "Compute: 9 * 7",
+      "options": [
+        "56",
+        "63",
+        "72"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "arithmetic"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 2,
+      "content": "Simplify: 20/25",
+      "options": [
+        "2/5",
+        "4/5",
+        "5/4"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "fractions"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 2,
+      "content": "Value of 2^4 is:",
+      "options": [
+        "8",
+        "12",
+        "16"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "powers"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 2,
+      "content": "Square root of 81 is:",
+      "options": [
+        "7",
+        "8",
+        "9"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "roots"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 2,
+      "content": "Order operations: 6 + 3 * 4",
+      "options": [
+        "36",
+        "18",
+        "24"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "pemdas"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 3,
+      "content": "If y = 3x - 2, find y when x = 5",
+      "options": [
+        "11",
+        "13",
+        "15"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "functions"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 3,
+      "content": "A ratio 2:3 means for every 2 red balls there are ___ blue balls.",
+      "options": [
+        "2",
+        "3",
+        "5"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "ratio"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 2,
+      "content": "0.75 is equal to:",
+      "options": [
+        "3/4",
+        "1/4",
+        "7/10"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "decimals"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 3,
+      "content": "Solve: 2x + 3 = 17",
+      "options": [
+        "6",
+        "7",
+        "8"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "algebra"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 3,
+      "content": "Perimeter of a rectangle 6 by 4 is:",
+      "options": [
+        "10",
+        "20",
+        "24"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "geometry"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 3,
+      "content": "Area of a rectangle 7 by 3 is:",
+      "options": [
+        "10",
+        "18",
+        "21"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "geometry"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 3,
+      "content": "Mean of 4, 6, 8 is:",
+      "options": [
+        "5",
+        "6",
+        "7"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "statistics"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 4,
+      "content": "If a price 80 decreases by 25%, new price is:",
+      "options": [
+        "55",
+        "60",
+        "65"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "percent"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 4,
+      "content": "What is |-9| ?",
+      "options": [
+        "-9",
+        "0",
+        "9"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "absolute-value"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 4,
+      "content": "Find x: x/4 = 3",
+      "options": [
+        "7",
+        "12",
+        "16"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "algebra"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 4,
+      "content": "Slope between (1,2) and (3,6) is:",
+      "options": [
+        "1",
+        "2",
+        "3"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "graph"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 4,
+      "content": "What is 5/8 as decimal?",
+      "options": [
+        "0.625",
+        "0.58",
+        "0.85"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "fractions"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 5,
+      "content": "If f(x)=x^2+1, f(4)=",
+      "options": [
+        "15",
+        "16",
+        "17"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "functions"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 5,
+      "content": "A triangle angles sum is:",
+      "options": [
+        "90\u00b0",
+        "180\u00b0",
+        "360\u00b0"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "geometry"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 5,
+      "content": "Probability of getting heads on a fair coin is:",
+      "options": [
+        "1/4",
+        "1/2",
+        "3/4"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "probability"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 5,
+      "content": "2/3 of 45 equals:",
+      "options": [
+        "20",
+        "30",
+        "35"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "fractions"
+      ]
+    },
+    {
+      "category": "MATHS_BASICS",
+      "difficulty": 5,
+      "content": "Solve: 3(x - 2) = 12",
+      "options": [
+        "4",
+        "5",
+        "6"
+      ],
+      "correctIndex": 2,
+      "tags": [
+        "algebra"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 1,
+      "content": "What is a variable in programming?",
+      "options": [
+        "A place to store a value",
+        "A type of computer",
+        "An internet browser"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "variables"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 1,
+      "content": "Which value type is true/false?",
+      "options": [
+        "Number",
+        "Boolean",
+        "Text"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "types"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 1,
+      "content": "What does an if/else structure do?",
+      "options": [
+        "Repeats code forever",
+        "Chooses between actions",
+        "Stores many values"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "conditionals"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 1,
+      "content": "A loop is mainly used to:",
+      "options": [
+        "Repeat steps",
+        "Draw graphics only",
+        "Rename files"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "loops"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 2,
+      "content": "A function is best described as:",
+      "options": [
+        "A reusable block of steps",
+        "A random value",
+        "A hardware part"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "functions"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 2,
+      "content": "Input to a function means:",
+      "options": [
+        "Data provided to it",
+        "Its final answer only",
+        "Its file name"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "functions"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 2,
+      "content": "What is an algorithm?",
+      "options": [
+        "A social media app",
+        "Step-by-step instructions",
+        "A screen pixel"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "algorithm"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 2,
+      "content": "A bug in software is:",
+      "options": [
+        "An insect in keyboard",
+        "An error in code or logic",
+        "A new feature"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "debugging"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 2,
+      "content": "Debugging means:",
+      "options": [
+        "Finding and fixing errors",
+        "Writing only comments",
+        "Compiling twice"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "debugging"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 2,
+      "content": "Which structure stores multiple ordered values?",
+      "options": [
+        "List/Array",
+        "Single Boolean",
+        "If statement"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "data-structures"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 3,
+      "content": "If a list has 5 items and starts at index 0, last index is:",
+      "options": [
+        "3",
+        "4",
+        "5"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "indexing"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 3,
+      "content": "What does \"return\" usually do in a function?",
+      "options": [
+        "Ends with a value output",
+        "Starts a loop",
+        "Creates a variable type"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "functions"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 3,
+      "content": "Which is language-neutral pseudocode?",
+      "options": [
+        "for each item in list",
+        "public static void main",
+        "SELECT * FROM table"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "pseudocode"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 3,
+      "content": "What is the purpose of comments in code?",
+      "options": [
+        "Explain intent to humans",
+        "Speed up CPU directly",
+        "Replace tests"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "readability"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 3,
+      "content": "What happens in an infinite loop?",
+      "options": [
+        "Loop never stops by itself",
+        "Program always crashes instantly",
+        "Variables disappear"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "loops"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 3,
+      "content": "Which is an example of input/output behavior?",
+      "options": [
+        "Input 3 -> Output 9",
+        "Output always unknown",
+        "Input not needed ever"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "functions"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 4,
+      "content": "A condition like score >= 50 checks:",
+      "options": [
+        "Comparison truth",
+        "Memory size",
+        "File location"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "conditionals"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 4,
+      "content": "Which is most important for beginner programs?",
+      "options": [
+        "Correctness",
+        "Using many libraries",
+        "Long variable names only"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "fundamentals"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 4,
+      "content": "What is \"syntax\" in programming?",
+      "options": [
+        "Rules for writing valid statements",
+        "A computer brand",
+        "A network protocol"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "syntax"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 4,
+      "content": "Why use functions instead of repeated code?",
+      "options": [
+        "Reuse and clarity",
+        "Increase typing",
+        "Hide all outputs"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "functions"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 5,
+      "content": "Which set lists only programming languages?",
+      "options": [
+        "Python, Java, JavaScript",
+        "HTML, Router, Mouse",
+        "Excel, Folder, CPU"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "languages"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 5,
+      "content": "If condition is false in if/else, which branch runs?",
+      "options": [
+        "if branch",
+        "else branch",
+        "both branches"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "conditionals"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 5,
+      "content": "A test case is used to:",
+      "options": [
+        "Check expected behavior",
+        "Decorate UI",
+        "Compress files"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "testing"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 5,
+      "content": "What is abstraction?",
+      "options": [
+        "Focus on essentials, hide details",
+        "Avoid using variables",
+        "Never use functions"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "abstraction"
+      ]
+    },
+    {
+      "category": "PROGRAMMING_CONCEPTS",
+      "difficulty": 5,
+      "content": "Which is a good first step when code fails?",
+      "options": [
+        "Read the error and reproduce issue",
+        "Delete project immediately",
+        "Change keyboard"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "debugging"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 1,
+      "content": "Best first step for a complex task is to:",
+      "options": [
+        "Break it into smaller parts",
+        "Guess final answer",
+        "Skip understanding"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "decomposition"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 1,
+      "content": "An edge case is:",
+      "options": [
+        "A normal common case",
+        "An unusual boundary situation",
+        "A typo only"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "testing"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 1,
+      "content": "If your first idea fails, you should:",
+      "options": [
+        "Stop immediately",
+        "Try another approach",
+        "Ignore results"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "persistence"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 2,
+      "content": "Why check your answer with examples?",
+      "options": [
+        "To validate reasoning",
+        "To make it longer",
+        "To avoid thinking"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "validation"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 2,
+      "content": "A helpful debugging strategy is to:",
+      "options": [
+        "Trace steps one by one",
+        "Change everything at once",
+        "Never inspect inputs"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "debugging"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 2,
+      "content": "When two solutions work, prefer the one that is:",
+      "options": [
+        "Clearer and simpler",
+        "More complicated",
+        "Harder to explain"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "tradeoffs"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 2,
+      "content": "What helps avoid missing details?",
+      "options": [
+        "Writing steps/checklist",
+        "Relying on memory only",
+        "Skipping constraints"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "organization"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 2,
+      "content": "A constraint in a problem is:",
+      "options": [
+        "A requirement/limit",
+        "A random opinion",
+        "A decoration"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "constraints"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 3,
+      "content": "If output is wrong, where to start?",
+      "options": [
+        "Compare expected vs actual at each step",
+        "Rewrite everything first",
+        "Change problem statement"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "debugging"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 3,
+      "content": "Pattern recognition helps by:",
+      "options": [
+        "Reusing known ideas",
+        "Avoiding all analysis",
+        "Removing need for tests"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "patterns"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 3,
+      "content": "What is a heuristic?",
+      "options": [
+        "Guaranteed perfect method",
+        "Practical rule of thumb",
+        "Programming language"
+      ],
+      "correctIndex": 1,
+      "tags": [
+        "heuristics"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 3,
+      "content": "When requirements change, you should:",
+      "options": [
+        "Re-check assumptions and adapt",
+        "Ignore change",
+        "Submit old solution"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "adaptation"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 3,
+      "content": "Good collaboration in solving includes:",
+      "options": [
+        "Explaining reasoning clearly",
+        "Keeping all ideas private",
+        "Avoiding questions"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 3,
+      "content": "To compare algorithms, check:",
+      "options": [
+        "Time and memory usage",
+        "Font size",
+        "File extension"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "complexity"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 3,
+      "content": "Why test boundary inputs like 0?",
+      "options": [
+        "They reveal hidden errors",
+        "They are never useful",
+        "They always pass"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "edge-cases"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 4,
+      "content": "If a process has many steps, best practice is:",
+      "options": [
+        "Verify each step output",
+        "Only check the last step",
+        "Skip intermediate checks"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "verification"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 4,
+      "content": "A flowchart is useful because it:",
+      "options": [
+        "Visualizes decision flow",
+        "Executes code automatically",
+        "Stores database rows"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "planning"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 4,
+      "content": "When stuck, a productive action is:",
+      "options": [
+        "Simplify to a smaller example",
+        "Randomize all variables",
+        "Ignore constraints"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "strategy"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 4,
+      "content": "What does \"iterate on a solution\" mean?",
+      "options": [
+        "Improve it through repeated refinements",
+        "Repeat same mistake",
+        "Never test"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "iteration"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 4,
+      "content": "Which behavior improves reliability?",
+      "options": [
+        "Testing both normal and unusual cases",
+        "Testing only easiest case",
+        "No testing if confident"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "testing"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 5,
+      "content": "A strong final check before submission is:",
+      "options": [
+        "Review requirements and outputs match",
+        "Only spell-check comments",
+        "Rename variables"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "review"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 5,
+      "content": "If two teammates disagree, best next step is:",
+      "options": [
+        "Compare evidence and test examples",
+        "Choose randomly",
+        "Stop discussion"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "collaboration"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 5,
+      "content": "Root cause analysis asks:",
+      "options": [
+        "What underlying reason caused the issue",
+        "Who wrote the code",
+        "Which color is best"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "analysis"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 5,
+      "content": "What increases confidence in a solution?",
+      "options": [
+        "Consistent results across multiple tests",
+        "One lucky correct run",
+        "Very long code"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "validation"
+      ]
+    },
+    {
+      "category": "PROBLEM_SOLVING_SKILLS",
+      "difficulty": 5,
+      "content": "A minimal reproducible example is useful because it:",
+      "options": [
+        "Isolates the problem clearly",
+        "Hides the issue",
+        "Adds unrelated features"
+      ],
+      "correctIndex": 0,
+      "tags": [
+        "debugging"
+      ]
+    }
+  ]
+}
