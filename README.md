@@ -1,4 +1,4 @@
-# CS Quiz Project
+# CS/BINFO Quiz Project
 
 This is a second year student project made with Spring Boot and MongoDB.
 
@@ -26,7 +26,7 @@ Then open `http://localhost:8080` in your browser
 
 ## Notes
 
-AI has been used to generate question and to give snippet examples + explanation on their usage
+AI has been used to generate question and to give certain snippet examples + explanation on their usage
 
 ## Known limitations
 
