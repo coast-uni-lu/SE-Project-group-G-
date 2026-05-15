@@ -26,7 +26,7 @@ import com.group_g.demo.service.AssessmentService;
 import com.group_g.demo.service.QuizService;
 
 //this class has all the API link used by the .html file
-//learned through use of LLM, youtube tutorials and  spring/RestAPI documentation
+//learned through use of LLM, youtube tutorials and  spring/Rest API documentation
 @RestController
 @RequestMapping("/api/v1")
 @CrossOrigin(origins = "*")
@@ -116,7 +116,7 @@ public class API {
     private void checkAssessmentRequest(AssessmentRequest request) {
         // to force entering a nickname, ***might refactor to offer choice or not to get ranked***
         if (request == null || request.getNickname() == null || request.getNickname().isBlank()) {
-            throw new IllegalArgumentException("For now, you need to enter a Nickname, avoid using your Personnal name");
+            throw new IllegalArgumentException("For now, you are required to enter a Nickname");
         }
         // basic check if all answers have been answered
         if (request.getAnswers() == null || request.getAnswers().isEmpty()) {
@@ -131,12 +131,12 @@ public class API {
         }
         // basic check if all answers have been answered
         if (request.getAnswers() == null || request.getAnswers().isEmpty()) {
-            throw new IllegalArgumentException("Answers are required");
+            throw new IllegalArgumentException("You didn't answer all the questions");
         }
     }
 
     private Map<String, Object> quizQuestionFormat(QuizQuestion question) {
-        // removes answers and extra fields before sending question to frontend
+        // removes answers and other useless field for userexperience before sending question to frontend
         Map<String, Object> view = new LinkedHashMap<>();
         view.put("id", question.getId());
         view.put("content", question.getContent());
