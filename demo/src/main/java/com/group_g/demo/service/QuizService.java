@@ -23,6 +23,8 @@ import com.group_g.demo.repository.QuizSessionRepository;
 
 @Service
 public class QuizService {
+
+    private static final int QUIZ_QUESTIONS_PER_CATEGORY = 10;
     
     private final QuizSessionRepository quizSessionRepository;
     private final QuizQuestionRepository quizQuestionRepository;
@@ -51,14 +53,16 @@ public class QuizService {
             List<QuizQuestion> selectedQuestions = new ArrayList<>();
 
             for (QuizzCategory category : QuizzCategory.values()) {
-                // pick 5 questions from each category
+                // pick 10 questions from each category, for 40 main quiz questions total
                 List<QuizQuestion> candidates = quizQuestionRepository.findByCategory(category);
                 int assessmentScore = session.getAssessmentScores().getOrDefault(category, 0);
-                List<QuizQuestion> chosen = questionPicker.pickQuestions(candidates, assessmentScore, 5);
+                List<QuizQuestion> chosen = questionPicker.pickQuestions(candidates, assessmentScore,
+                        QUIZ_QUESTIONS_PER_CATEGORY);
                 selectedQuestions.addAll(chosen);
             }
 
-            selectedQuestions.sort(Comparator.comparing(QuizQuestion::getCategory));
+            selectedQuestions.sort(Comparator.comparingInt(QuizQuestion::getDifficulty)
+                    .thenComparing(QuizQuestion::getCategory));
             for (QuizQuestion question : selectedQuestions) {
                 // count how many times this question has appeared
                 question.setTimesShown(question.getTimesShown() + 1);
@@ -74,8 +78,9 @@ public class QuizService {
         }
 
         List<QuizQuestion> questions = quizQuestionRepository.findAllById(session.getSelectedQuestionIds());
-        // sort again so the page shows categories grouped together
-        questions.sort(Comparator.comparing(QuizQuestion::getCategory));
+        // sort again so the quiz goes from easier to harder
+        questions.sort(Comparator.comparingInt(QuizQuestion::getDifficulty)
+                .thenComparing(QuizQuestion::getCategory));
         return questions;
     }
 

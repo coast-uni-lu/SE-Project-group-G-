@@ -1,5 +1,6 @@
 package com.group_g.demo.service;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,8 @@ import com.group_g.demo.repository.QuizSessionRepository;
 @Service
 public class AssessmentService {
 
+    private static final int ASSESSMENT_QUESTIONS_PER_CATEGORY = 3;
+
     private final AssessmentItemRepository assessmentItemRepository;
     private final QuizSessionRepository quizSessionRepository;
 
@@ -28,8 +31,22 @@ public class AssessmentService {
     }
 
     public List<AssessmentItem> getQuestions() {
-        // gets assessment questions from db in order
-        return assessmentItemRepository.findAllByOrderByOrderIndexAsc();
+        // keeps the starter check short while still covering every category
+        List<AssessmentItem> allItems = assessmentItemRepository.findAllByOrderByOrderIndexAsc();
+        Map<QuizzCategory, Integer> selectedCounts = new EnumMap<>(QuizzCategory.class);
+        for (QuizzCategory category : QuizzCategory.values()) {
+            selectedCounts.put(category, 0);
+        }
+
+        List<AssessmentItem> selectedItems = new ArrayList<>();
+        for (AssessmentItem item : allItems) {
+            int categoryCount = selectedCounts.get(item.getCategory());
+            if (categoryCount < ASSESSMENT_QUESTIONS_PER_CATEGORY) {
+                selectedItems.add(item);
+                selectedCounts.put(item.getCategory(), categoryCount + 1);
+            }
+        }
+        return selectedItems;
     }
 
     public AssessmentSubmit submit(AssessmentRequest request) {
