@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import com.group_g.demo.dto.BookRecommendation;
 import com.group_g.demo.dto.QuizRequest;
 import com.group_g.demo.dto.QuizSubmit;
 import com.group_g.demo.model.FinalResult;
@@ -27,13 +28,18 @@ public class QuizService {
     private final QuizQuestionRepository quizQuestionRepository;
     private final LeaderboardRepository attemptResultRepository;
     private final QuestionPicker questionPicker;
+    private final BookRecommendationService bookRecommendationService;
+    private final ResultEmailService resultEmailService;
 
     public QuizService(QuizSessionRepository quizSessionRepository, QuizQuestionRepository quizQuestionRepository,
-            LeaderboardRepository attemptResultRepository, QuestionPicker questionPicker) {
+            LeaderboardRepository attemptResultRepository, QuestionPicker questionPicker,
+            BookRecommendationService bookRecommendationService, ResultEmailService resultEmailService) {
         this.quizSessionRepository = quizSessionRepository;
         this.quizQuestionRepository = quizQuestionRepository;
         this.attemptResultRepository = attemptResultRepository;
         this.questionPicker = questionPicker;
+        this.bookRecommendationService = bookRecommendationService;
+        this.resultEmailService = resultEmailService;
     }
 
     public List<QuizQuestion> getQuiz(String sessionId) {
@@ -124,12 +130,27 @@ public class QuizService {
         session.setSubmitted(true);
         quizSessionRepository.save(session);
 
-        return new QuizSubmit(
+        List<BookRecommendation> recommendations = bookRecommendationService.recommendBooks(finalScore,
+                correctByCategory);
+        QuizSubmit response = new QuizSubmit(
                 session.getNickname(),
                 total,
                 correct,
                 finalScore,
                 session.getAssessmentScores(),
-                correctByCategory);
+                correctByCategory,
+                recommendations,
+                false);
+
+        boolean emailSent = resultEmailService.sendResult(session.getEmail(), response);
+        return new QuizSubmit(
+                response.getNickname(),
+                response.getTotalQuestions(),
+                response.getCorrectAnswers(),
+                response.getFinalScore(),
+                response.getAssessmentScores(),
+                response.getCorrectAnswersByCategory(),
+                response.getBookRecommendations(),
+                emailSent);
     }
 }

@@ -1,4 +1,5 @@
 package com.group_g.demo.dto;
+import java.util.List;
 import java.util.Map;
 import com.group_g.demo.model.QuizzCategory;
 // final quiz result sent back to the page
@@ -10,16 +11,22 @@ public class QuizSubmit {
     private int finalScore;
     private Map<QuizzCategory, Integer> assessmentScores;
     private Map<QuizzCategory, Integer> correctAnswersByCategory;
+    private List<BookRecommendation> bookRecommendations;
+    private boolean emailSent;
 
     public QuizSubmit(String nickname, int totalQuestions, int correctAnswers, int finalScore,
             Map<QuizzCategory, Integer> assessmentScores,
-            Map<QuizzCategory, Integer> correctAnswersByCategory) {
+            Map<QuizzCategory, Integer> correctAnswersByCategory,
+            List<BookRecommendation> bookRecommendations,
+            boolean emailSent) {
         this.nickname = nickname;
         this.totalQuestions = totalQuestions;
         this.correctAnswers = correctAnswers;
         this.finalScore = finalScore;
         this.assessmentScores = assessmentScores;
         this.correctAnswersByCategory = correctAnswersByCategory;
+        this.bookRecommendations = bookRecommendations;
+        this.emailSent = emailSent;
     }
 
     public String getNickname() {
@@ -44,5 +51,13 @@ public class QuizSubmit {
 
     public Map<QuizzCategory, Integer> getCorrectAnswersByCategory() {
         return correctAnswersByCategory;
+    }
+
+    public List<BookRecommendation> getBookRecommendations() {
+        return bookRecommendations;
+    }
+
+    public boolean isEmailSent() {
+        return emailSent;
     }
 }

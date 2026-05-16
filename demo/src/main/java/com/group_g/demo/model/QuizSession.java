@@ -13,6 +13,7 @@ public class QuizSession {
     @Id
     private String id;
     private String nickname;
+    private String email;
     private Instant createdAt;
     private Map<QuizzCategory, Integer> assessmentScores;
     // keeps same questions if user refreshes instead of making a new quiz
@@ -22,10 +23,11 @@ public class QuizSession {
     public QuizSession() {
     }
 
-    public QuizSession(String id, String nickname, Instant createdAt, Map<QuizzCategory, Integer> assessmentScores,
-            List<String> selectedQuestionIds, boolean submitted) {
+    public QuizSession(String id, String nickname, String email, Instant createdAt,
+            Map<QuizzCategory, Integer> assessmentScores, List<String> selectedQuestionIds, boolean submitted) {
         this.id = id;
         this.nickname = nickname;
+        this.email = email;
         this.createdAt = createdAt;
         this.assessmentScores = assessmentScores;
         this.selectedQuestionIds = selectedQuestionIds;
@@ -38,6 +40,10 @@ public class QuizSession {
 
     public String getNickname() {
         return nickname;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public Instant getCreatedAt() {
@@ -62,6 +68,10 @@ public class QuizSession {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setCreatedAt(Instant createdAt) {

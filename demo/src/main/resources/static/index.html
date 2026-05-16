@@ -10,7 +10,7 @@
         .block { margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid #ececec; }
         .tag { display: inline-block; background: #2f65c8; color: #fff; padding: 3px 8px; font-size: 12px; }
         button { border: 1px solid #1f7a42; background: #2da75b; color: #fff; padding: 9px 12px; cursor: pointer; }
-        input[type="text"] { padding: 8px; width: 240px; }
+        input[type="text"], input[type="email"] { padding: 8px; width: 240px; }
         table { width: 100%; border-collapse: collapse; }
         th, td { border-bottom: 1px solid #ececec; padding: 8px; text-align: left; }
     </style>
@@ -23,6 +23,7 @@
         <p>This is our second year Software Engineering project to assess if students are ready for a cursus in CS/BINFO and recommend books based on what they need to prepare for if they want to.</p>
         <p>Avoid using your personnal name and enter a nickname for the leaderboard:</p>
         <input id="nicknameInput" type="text" maxlength="30" placeholder="nickname" />
+        <input id="emailInput" type="email" maxlength="120" placeholder="email for results (optional)" />
         <button id="confirmNicknameBtn" onclick="startAssessment()">Confirm nickname</button>
     </section>
 
@@ -41,7 +42,10 @@
     <section id="resultStep" class="hidden">
         <h2>Results</h2>
         <p id="resultSummary"></p>
+        <p id="emailStatus"></p>
         <pre id="assessmentScores"></pre>
+        <h3>Book recommendations</h3>
+        <div id="bookRecommendations"></div>
         <h3>Leaderboard</h3>
         <table>
             <thead><tr><th>Nickname</th><th>Score</th><th>Correct</th><th>Time</th></tr></thead>
@@ -55,6 +59,7 @@
     let assessmentItems = [];
     let quizQuestions = [];
     let sessionId = "";
+    let email = "";
 
     // only shows one page section and hides the other ones for the rest of the steps
     function showStep(id) {
@@ -74,6 +79,7 @@
 
     async function startAssessment() {
         nickname = document.getElementById("nicknameInput").value.trim();
+        email = document.getElementById("emailInput").value.trim();
         if (!nickname) {
             alert("Nickname is required.");
             return;
@@ -129,7 +135,7 @@
         const res = await fetch('/api/v1/assessment/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nickname, answers })
+            body: JSON.stringify({ nickname, email: email || null, answers })
         });
         const data = await res.json();
         if (!res.ok) {
@@ -184,7 +190,17 @@
 
         document.getElementById('resultSummary').innerText =
             `${data.nickname}: ${data.finalScore}% (${data.correctAnswers}/${data.totalQuestions})`;
-        document.getElementById('assessmentScores').innerText = JSON.stringify(data.AssessmentScores, null, 2);
+        document.getElementById('emailStatus').innerText = email
+            ? (data.emailSent ? 'Result email sent.' : 'Result email not sent. Email delivery is disabled or not configured.')
+            : 'No email requested.';
+        document.getElementById('assessmentScores').innerText = JSON.stringify(data.assessmentScores, null, 2);
+        document.getElementById('bookRecommendations').innerHTML = (data.bookRecommendations || []).map(book => `
+            <div class="block">
+              <span class="tag">${formatCategoryLabel(book.category)}</span>
+              <p><strong>${book.title}</strong> by ${book.author}</p>
+              <p>${book.reason}</p>
+            </div>
+        `).join('');
 
         const lbRes = await fetch('/api/v1/leaderboard?limit=10');
         const leaderboard = await lbRes.json();

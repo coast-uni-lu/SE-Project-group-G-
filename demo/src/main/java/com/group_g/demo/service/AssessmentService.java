@@ -60,11 +60,19 @@ public class AssessmentService {
         quizSessionRepository.save(new QuizSession(
                 sessionId,
                 nickname,
+                normalizeEmail(request.getEmail()),
                 Instant.now(),
                 scores,
                 null,
                 false));
 
         return new AssessmentSubmit(sessionId, nickname, scores);
+    }
+
+    private String normalizeEmail(String email) {
+        if (email == null || email.isBlank()) {
+            return null;
+        }
+        return email.trim();
     }
 }
