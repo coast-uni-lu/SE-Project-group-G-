@@ -1,9 +1,19 @@
 package com.group_g.demo.model;
 
-// categories used for assessment questions and quiz questions
+// score sections used for quiz questions and results
 public enum QuizzCategory {
-    LOGICAL_REASONING,
-    MATHS_BASICS,
-    PROGRAMMING_CONCEPTS,
-    PROBLEM_SOLVING_SKILLS
+    CALCULUS("Mathematics - Calculus"),
+    DISCRETE_MATHEMATICS("Discrete Mathematics"),
+    PROGRAMMING_BASICS("Programming Basics"),
+    INTRODUCTION_A_L_INFORMATIQUE("Basic Computer and Algorithm Concepts");
+
+    private final String displayName;
+
+    QuizzCategory(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
 }

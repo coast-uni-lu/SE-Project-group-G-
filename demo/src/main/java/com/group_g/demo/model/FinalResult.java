@@ -1,9 +1,11 @@
 package com.group_g.demo.model;
+
 import java.time.Instant;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 // final saved result used later for leaderboard
 @Document(collection = "attempt_results")
 public class FinalResult {
@@ -13,20 +15,22 @@ public class FinalResult {
     private String sessionId;
     private String nickname;
     private Instant timestamp;
-    private Map<QuizzCategory, Integer> assessmentScores;
+    private Map<QuizzCategory, Integer> sectionScores;
     private int totalQuestions;
     private int correctAnswers;
     private int finalScore;
 
-    public FinalResult() {
-    }
+    public FinalResult() { //needed for Spring, basically we need an empty constructor to 
+                           // create an object before filling it's fields, run time error otherwise
+    }                      //only for when we build an object based on the DB documents
 
-    public FinalResult(String sessionId, String nickname, Instant timestamp, Map<QuizzCategory, Integer> assessmentScores,
+
+    public FinalResult(String sessionId, String nickname, Instant timestamp, Map<QuizzCategory, Integer> sectionScores,
             int totalQuestions, int correctAnswers, int finalScore) {
         this.sessionId = sessionId;
         this.nickname = nickname;
         this.timestamp = timestamp;
-        this.assessmentScores = assessmentScores;
+        this.sectionScores = sectionScores;
         this.totalQuestions = totalQuestions;
         this.correctAnswers = correctAnswers;
         this.finalScore = finalScore;
@@ -48,8 +52,8 @@ public class FinalResult {
         return timestamp;
     }
 
-    public Map<QuizzCategory, Integer> getAssessmentScores() {
-        return assessmentScores;
+    public Map<QuizzCategory, Integer> getSectionScores() {
+        return sectionScores;
     }
 
     public int getTotalQuestions() {
@@ -80,8 +84,8 @@ public class FinalResult {
         this.timestamp = timestamp;
     }
 
-    public void setAssessmentScores(Map<QuizzCategory, Integer> assessmentScores) {
-        this.assessmentScores = assessmentScores;
+    public void setSectionScores(Map<QuizzCategory, Integer> sectionScores) {
+        this.sectionScores = sectionScores;
     }
 
     public void setTotalQuestions(int totalQuestions) {

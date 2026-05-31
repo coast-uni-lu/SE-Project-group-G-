@@ -17,7 +17,7 @@ public class Leaderboard {
         this.totalQuestions = totalQuestions;
         this.timestamp = timestamp;
     }
-
+    //getters
     public String getNickname() {
         return nickname;
     }

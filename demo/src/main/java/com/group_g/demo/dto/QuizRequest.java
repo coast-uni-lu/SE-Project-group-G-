@@ -7,7 +7,7 @@ public class QuizRequest {
     private String sessionId;
 
     private Map<String, Integer> answers;
-
+    //getters
     public String getSessionId() {
         return sessionId;
     }
@@ -15,7 +15,7 @@ public class QuizRequest {
     public Map<String, Integer> getAnswers() {
         return answers;
     }
-
+    //setters
     public void setSessionId(String sessionId) {
         this.sessionId = sessionId;
     }

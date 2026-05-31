@@ -1,0 +1,32 @@
+*********************************************COMMENTS*********************************************
+
+
+
+****PARAMETERIZED QUESTIONS!!!********
+
+more precise book recom algo + book bank, probably not stored in DB ?
+
+update HTML to be 1 question submit per step > Answer and explanation ***OPTION A*** OR All explanation after submiting then next ***OPTION B****
+
+box question (multiple possible pick for 1 question)
+
+emailing system??
+
+Score feedback : What you lack for example.
+
+Digital fundamentals by Thomas Floyd,  Chapter 3 on logic gates
+
+Digital electronics: Principles & Applications by Roger Tokheim for logic
+
+digital fundamentals
+
+
+prog
+ Head First Java for prog (because it's the 1st programming language we learn in the cursus) 
+	>This book stands out because it is specifically engineered for absolute beginners using an interactive, highly visual approach.
+
+algo
+Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People
+	>This book explains complex computer science concepts through simple, real-world analogies and hand-drawn illustrations
+Introduction to Algorithms, 4th Edition (CLRS)
+	>The bible of algorithms. nothing more to say.

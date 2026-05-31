@@ -1,1411 +1,581 @@
 {
-  "version": 2,
+  "version": 8,
   "questions": [
     {
-      "category": "LOGICAL_REASONING",
+      "category": "CALCULUS",
+      "subCategory": "M1",
       "difficulty": 1,
-      "content": "If all birds have wings and a sparrow is a bird, what is true?",
-      "options": [
-        "A sparrow has wings",
-        "A sparrow has fins",
-        "No conclusion can be made"
+      "variants": [
+        {
+          "content": "Guidance: To evaluate a function, replace x with the given number. Example: if f(x) = 2x + 1, then f(3) = 2 x 3 + 1 = 7.\n\nGiven f(x) = 3x + 4, what is f(5)?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: To evaluate a function, replace x with the given number. Example: if f(x) = 2x + 1, then f(3) = 2 x 3 + 1 = 7.\n\nGiven f(x) = 3x + 4, what is f(10)?",
+          "correctIndex": 2
+        }
       ],
-      "correctIndex": 0,
-      "tags": [
-        "deduction"
-      ]
+      "options": ["17", "19", "34", "12"]
     },
     {
-      "category": "LOGICAL_REASONING",
+      "category": "CALCULUS",
+      "subCategory": "M1",
+      "difficulty": 2,
+      "variants": [
+        {
+          "content": "Guidance: Replace x everywhere it appears, then calculate powers before multiplication and addition.\n\nGiven f(x) = 2x^2 - 3x + 1, what is f(4)?",
+          "correctIndex": 0
+        },
+        {
+          "content": "Guidance: Replace x everywhere it appears, then calculate powers before multiplication and addition.\n\nGiven f(x) = x^2, what is f(5)?",
+          "correctIndex": 2
+        }
+      ],
+      "options": ["21", "17", "25", "9"]
+    },
+    {
+      "category": "CALCULUS",
+      "subCategory": "M1",
+      "difficulty": 3,
+      "variants": [
+        {
+          "content": "Given f(x) = 2x + 1 and g(x) = x^2 - 3, what is f(g(3))?",
+          "correctIndex": 2
+        },
+        {
+          "content": "Given f(x) = x + 1 and g(x) = 2x, what is f(g(3))?",
+          "correctIndex": 0
+        }
+      ],
+      "options": ["7", "11", "13", "15"]
+    },
+    {
+      "category": "CALCULUS",
+      "subCategory": "M2",
       "difficulty": 1,
-      "content": "Exactly one statement is true: (A) The light is on. (B) The light is off. If A is true, B is:",
-      "options": [
-        "True",
-        "False",
-        "Unknown"
+      "variants": [
+        {
+          "content": "Guidance: The derivative tells you the rate of change, or slope. For a straight line f(x) = ax + b, the derivative is the slope a. Example: if f(x) = 5x + 2, then f'(x) = 5.\n\nUsing this rule, what is the derivative of f(x) = 4x + 7?",
+          "correctIndex": 2
+        },
+        {
+          "content": "Guidance: The derivative tells you the rate of change, or slope. For a straight line f(x) = ax + b, the derivative is the slope a. Example: if f(x) = 5x + 2, then f'(x) = 5.\n\nUsing this rule, what is the derivative of f(x) = 7x + 4?",
+          "correctIndex": 0
+        }
       ],
-      "correctIndex": 1,
-      "tags": [
-        "xor"
-      ]
+      "options": ["7", "11", "4", "28"]
     },
     {
-      "category": "LOGICAL_REASONING",
+      "category": "CALCULUS",
+      "subCategory": "M2",
       "difficulty": 2,
-      "content": "Which number comes next: 2, 4, 8, 16, ?",
-      "options": [
-        "18",
-        "24",
-        "32",
-        "34"
+      "variants": [
+        {
+          "content": "Guidance: For f(x) = ax^2 + bx + c, the derivative is f'(x) = 2ax + b. Then replace x with the requested value.\n\nGiven f(x) = 3x^2 + 2x - 5, what is f'(3)?",
+          "correctIndex": 2
+        },
+        {
+          "content": "Guidance: For f(x) = ax^2 + bx + c, the derivative is f'(x) = 2ax + b. Then replace x with the requested value.\n\nGiven f(x) = 3x^2 + 2x - 5, what is f'(2)?",
+          "correctIndex": 0
+        }
       ],
-      "correctIndex": 2,
-      "tags": [
-        "pattern"
-      ]
+      "options": ["14", "16", "20", "22"]
     },
     {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 2,
-      "content": "If it rains, the ground gets wet. The ground is not wet. What follows?",
-      "options": [
-        "It rained",
-        "It did not rain",
-        "It may or may not have rained"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "implication"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 2,
-      "content": "Which is a contradiction?",
-      "options": [
-        "P and not P",
-        "P or not P",
-        "If P then P"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "logic"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 2,
-      "content": "All squares are rectangles. Some rectangles are blue. Which must be true?",
-      "options": [
-        "Some squares are blue",
-        "All squares are rectangles",
-        "No rectangles are blue"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "sets"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
+      "category": "CALCULUS",
+      "subCategory": "M2",
       "difficulty": 3,
-      "content": "A code is made of 3 letters. First can be A or B. Second must be C. Third can be D or E. How many codes?",
-      "options": [
-        "2",
-        "3",
-        "4",
-        "5"
+      "variants": [
+        {
+          "content": "Using the product rule, what is the derivative of f(x) = (2x + 3)(x - 4)?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Using the product rule, what is the derivative of f(x) = (2x - 3)(x + 4)?",
+          "correctIndex": 2
+        }
       ],
-      "correctIndex": 2,
-      "tags": [
-        "counting"
-      ]
+      "options": ["2x - 5", "4x - 5", "4x + 5", "2x^2 - 5x - 12"]
     },
     {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 3,
-      "content": "Which pair has the same relationship as \"book : read\"?",
-      "options": [
-        "song : listen",
-        "car : road",
-        "cup : table"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "analogy"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 2,
-      "content": "Which argument is strongest?",
-      "options": [
-        "\"Many people think so\"",
-        "\"It follows directly from the given data\"",
-        "\"It sounds correct\""
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "argument"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 2,
-      "content": "If every student submitted homework and Lina is a student, then:",
-      "options": [
-        "Lina submitted homework",
-        "Lina did not submit homework",
-        "Cannot determine"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "deduction"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 3,
-      "content": "Find the odd one out: triangle, square, circle, carrot",
-      "options": [
-        "triangle",
-        "circle",
-        "carrot",
-        "square"
-      ],
-      "correctIndex": 2,
-      "tags": [
-        "classification"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 3,
-      "content": "If A>B and B>C, which is always true?",
-      "options": [
-        "C>A",
-        "A>C",
-        "A=C"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "ordering"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 3,
-      "content": "A statement that disproves \"all swans are white\" is:",
-      "options": [
-        "One white swan",
-        "One black swan",
-        "Many white swans"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "counterexample"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 4,
-      "content": "If two propositions are both true, value of (P AND Q) is:",
-      "options": [
-        "True",
-        "False",
-        "Unknown"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "truth-table"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 3,
-      "content": "Sequence: 1, 3, 6, 10, ?",
-      "options": [
-        "12",
-        "14",
-        "15",
-        "16"
-      ],
-      "correctIndex": 2,
-      "tags": [
-        "pattern"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 4,
-      "content": "If no gamers are early sleepers, and Tom is an early sleeper, then Tom is:",
-      "options": [
-        "A gamer",
-        "Not a gamer",
-        "Possibly a gamer"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "syllogism"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 2,
-      "content": "Which is an assumption in \"The quiz score improved because she practiced\"?",
-      "options": [
-        "She practiced",
-        "Practice can improve scores",
-        "The quiz existed"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "assumption"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 3,
-      "content": "A fair coin is tossed twice. How many total outcomes?",
-      "options": [
-        "2",
-        "3",
-        "4",
-        "8"
-      ],
-      "correctIndex": 2,
-      "tags": [
-        "counting"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 4,
-      "content": "If P implies Q and Q implies R, then P implies:",
-      "options": [
-        "Q only",
-        "R",
-        "not R"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "transitivity"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 3,
-      "content": "What comes next: AZ, BY, CX, ?",
-      "options": [
-        "DW",
-        "DX",
-        "EV"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "pattern"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 4,
-      "content": "Which statement is equivalent to \"not (P or Q)\"?",
-      "options": [
-        "not P and not Q",
-        "not P or not Q",
-        "P and Q"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "de-morgan"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 3,
-      "content": "In a race, Ana finished ahead of Ben but behind Chlo\u00e9. Order is:",
-      "options": [
-        "Ana, Chlo\u00e9, Ben",
-        "Chlo\u00e9, Ana, Ben",
-        "Ben, Ana, Chlo\u00e9"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "ordering"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 4,
-      "content": "If exactly one of X and Y is true, and Y is false, X is:",
-      "options": [
-        "True",
-        "False",
-        "Unknown"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "xor"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 5,
-      "content": "A rule says \"admit if age >= 16 and has pass\". Person age 17 without pass is:",
-      "options": [
-        "Admitted",
-        "Not admitted",
-        "Need more data"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "conditions"
-      ]
-    },
-    {
-      "category": "LOGICAL_REASONING",
-      "difficulty": 5,
-      "content": "All robots are machines. No machine is alive. Which follows?",
-      "options": [
-        "Some robots are alive",
-        "No robots are alive",
-        "All alive things are robots"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "syllogism"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
+      "category": "CALCULUS",
+      "subCategory": "M3",
       "difficulty": 1,
-      "content": "What is 30% of 50?",
-      "options": [
-        "10",
-        "15",
-        "20",
-        "25"
+      "variants": [
+        {
+          "content": "Guidance: A definite integral can measure area under a curve. For a constant function c, the area from a to b is c x (b - a). Example: the integral from 1 to 4 of 3 dx is 3 x (4 - 1) = 9.\n\nWhat is the integral from 2 to 6 of 5 dx?",
+          "correctIndex": 2
+        },
+        {
+          "content": "Guidance: A definite integral can measure area under a curve. For a constant function c, the area from a to b is c x (b - a). Example: the integral from 1 to 4 of 3 dx is 3 x (4 - 1) = 9.\n\nWhat is the integral from 0 to 6 of 5 dx?",
+          "correctIndex": 3
+        }
       ],
-      "correctIndex": 1,
-      "tags": [
-        "percent"
-      ]
+      "options": ["10", "25", "20", "30"]
     },
     {
-      "category": "MATHS_BASICS",
+      "category": "CALCULUS",
+      "subCategory": "M3",
+      "difficulty": 2,
+      "variants": [
+        {
+          "content": "Guidance: Find an antiderivative first. For 3x + 1, one antiderivative is 3x^2/2 + x. Then evaluate it at the upper bound and subtract the value at the lower bound.\n\nWhat is the integral from 0 to 2 of (3x + 1) dx?",
+          "correctIndex": 2
+        },
+        {
+          "content": "Guidance: Find an antiderivative first. For 3x + 2, one antiderivative is 3x^2/2 + 2x. Then evaluate it at the upper bound and subtract the value at the lower bound.\n\nWhat is the integral from 0 to 2 of (3x + 2) dx?",
+          "correctIndex": 3
+        }
+      ],
+      "options": ["6", "7", "8", "10"]
+    },
+    {
+      "category": "CALCULUS",
+      "subCategory": "M3",
+      "difficulty": 3,
+      "variants": [
+        {
+          "content": "What is the integral from 0 to 3 of (x^2 + 1) dx?",
+          "correctIndex": 2
+        },
+        {
+          "content": "What is the integral from 0 to 2 of (4x + 3) dx?",
+          "correctIndex": 3
+        }
+      ],
+      "options": ["9", "10", "12", "14"]
+    },
+    {
+      "category": "DISCRETE_MATHEMATICS",
+      "subCategory": "M4",
       "difficulty": 1,
-      "content": "Solve: 5x = 35",
-      "options": [
-        "5",
-        "6",
-        "7"
+      "variants": [
+        {
+          "content": "Guidance: Boolean logic uses True and False. AND is true only if both values are true. OR is true if at least one value is true. NOT flips the value, so NOT False becomes True.\n\nWhat is the result of True AND (NOT False)?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: Boolean logic uses True and False. AND is true only if both values are true. OR is true if at least one value is true. NOT flips the value, so NOT True becomes False.\n\nWhat is the result of True AND (NOT True)?",
+          "correctIndex": 0
+        }
       ],
-      "correctIndex": 2,
-      "tags": [
-        "algebra"
-      ]
+      "options": ["False", "True", "0", "Undefined"]
     },
     {
-      "category": "MATHS_BASICS",
+      "category": "DISCRETE_MATHEMATICS",
+      "subCategory": "M4",
+      "difficulty": 2,
+      "variants": [
+        {
+          "content": "Guidance: Work inside parentheses first. A AND B must have both values true; then combine that result with C using OR.\n\nGiven A = True, B = False, C = True, what is the result of (A AND B) OR C?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: Work inside parentheses first. A AND B must have both values true; then combine that result with C using OR.\n\nGiven A = True, B = False, C = False, what is the result of (A AND B) OR C?",
+          "correctIndex": 0
+        }
+      ],
+      "options": ["False", "True", "Only true if B is true", "Cannot be determined"]
+    },
+    {
+      "category": "DISCRETE_MATHEMATICS",
+      "subCategory": "M4",
+      "difficulty": 3,
+      "variants": [
+        {
+          "content": "For the expression (A OR B) AND (NOT C), how many of the 8 possible combinations give True?",
+          "correctIndex": 1
+        },
+        {
+          "content": "For the expression A AND B, how many of the 8 possible combinations give True?",
+          "correctIndex": 0
+        }
+      ],
+      "options": ["2", "3", "4", "6"]
+    },
+    {
+      "category": "DISCRETE_MATHEMATICS",
+      "subCategory": "M5",
       "difficulty": 1,
-      "content": "What is 12 + 18?",
-      "options": [
-        "20",
-        "28",
-        "30"
+      "variants": [
+        {
+          "content": "Guidance: A set is a collection of distinct elements. Intersection means elements that appear in both sets. Example: if A = {1, 2, 3} and B = {3, 4, 5}, then A intersection B = {3}.\n\nGiven A = {2, 4, 6, 8} and B = {4, 8, 12}, what is A intersection B?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: A set is a collection of distinct elements. Intersection means elements that appear in both sets. Example: if A = {1, 2, 3} and B = {3, 4, 5}, then A intersection B = {3}.\n\nGiven A = {2, 6, 9} and B = {2, 6, 10}, what is A intersection B?",
+          "correctIndex": 2
+        }
       ],
-      "correctIndex": 2,
-      "tags": [
-        "arithmetic"
-      ]
+      "options": ["{2, 4, 6, 8, 12}", "{4, 8}", "{2, 6}", "{4, 8, 12}"]
     },
     {
-      "category": "MATHS_BASICS",
+      "category": "DISCRETE_MATHEMATICS",
+      "subCategory": "M5",
       "difficulty": 2,
-      "content": "Compute: 9 * 7",
-      "options": [
-        "56",
-        "63",
-        "72"
+      "variants": [
+        {
+          "content": "Guidance: A' means everything in the universal set U that is not in A. After finding A', keep only the elements that are also in B.\n\nGiven U = {1,2,3,4,5,6,7,8}, A = {1,3,5,7} and B = {3,4,5,6}, what is A' intersection B?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: A' means everything in the universal set U that is not in A. After finding A', keep only the elements that are also in B.\n\nGiven U = {1,2,3,4,5,6,7,8}, A = {1,2,4,6,7,8} and B = {3,4,5,6}, what is A' intersection B?",
+          "correctIndex": 0
+        }
       ],
-      "correctIndex": 1,
-      "tags": [
-        "arithmetic"
-      ]
+      "options": ["{3, 5}", "{4, 6}", "{2, 4, 6, 8}", "{1, 3, 4, 5, 6, 7}"]
     },
     {
-      "category": "MATHS_BASICS",
-      "difficulty": 2,
-      "content": "Simplify: 20/25",
-      "options": [
-        "2/5",
-        "4/5",
-        "5/4"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "fractions"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 2,
-      "content": "Value of 2^4 is:",
-      "options": [
-        "8",
-        "12",
-        "16"
-      ],
-      "correctIndex": 2,
-      "tags": [
-        "powers"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 2,
-      "content": "Square root of 81 is:",
-      "options": [
-        "7",
-        "8",
-        "9"
-      ],
-      "correctIndex": 2,
-      "tags": [
-        "roots"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 2,
-      "content": "Order operations: 6 + 3 * 4",
-      "options": [
-        "36",
-        "18",
-        "24"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "pemdas"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
+      "category": "DISCRETE_MATHEMATICS",
+      "subCategory": "M5",
       "difficulty": 3,
-      "content": "If y = 3x - 2, find y when x = 5",
-      "options": [
-        "11",
-        "13",
-        "15"
+      "variants": [
+        {
+          "content": "Given U = {1..10}, A = {1,2,3,4,5}, B = {3,4,5,6,7}, C = {5,6,7,8,9}. How many elements are in (A union B) intersection C'?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Given U = {1..10}, A = {1,2,3,6}, B = {2,3,4,5}, C = {4,5,6,7,8,9,10}. How many elements are in (A union B) intersection C'?",
+          "correctIndex": 0
+        }
       ],
-      "correctIndex": 1,
-      "tags": [
-        "functions"
-      ]
+      "options": ["3", "4", "5", "7"]
     },
     {
-      "category": "MATHS_BASICS",
-      "difficulty": 3,
-      "content": "A ratio 2:3 means for every 2 red balls there are ___ blue balls.",
-      "options": [
-        "2",
-        "3",
-        "5"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "ratio"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 2,
-      "content": "0.75 is equal to:",
-      "options": [
-        "3/4",
-        "1/4",
-        "7/10"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "decimals"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 3,
-      "content": "Solve: 2x + 3 = 17",
-      "options": [
-        "6",
-        "7",
-        "8"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "algebra"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 3,
-      "content": "Perimeter of a rectangle 6 by 4 is:",
-      "options": [
-        "10",
-        "20",
-        "24"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "geometry"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 3,
-      "content": "Area of a rectangle 7 by 3 is:",
-      "options": [
-        "10",
-        "18",
-        "21"
-      ],
-      "correctIndex": 2,
-      "tags": [
-        "geometry"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 3,
-      "content": "Mean of 4, 6, 8 is:",
-      "options": [
-        "5",
-        "6",
-        "7"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "statistics"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 4,
-      "content": "If a price 80 decreases by 25%, new price is:",
-      "options": [
-        "55",
-        "60",
-        "65"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "percent"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 4,
-      "content": "What is |-9| ?",
-      "options": [
-        "-9",
-        "0",
-        "9"
-      ],
-      "correctIndex": 2,
-      "tags": [
-        "absolute-value"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 4,
-      "content": "Find x: x/4 = 3",
-      "options": [
-        "7",
-        "12",
-        "16"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "algebra"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 4,
-      "content": "Slope between (1,2) and (3,6) is:",
-      "options": [
-        "1",
-        "2",
-        "3"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "graph"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 4,
-      "content": "What is 5/8 as decimal?",
-      "options": [
-        "0.625",
-        "0.58",
-        "0.85"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "fractions"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 5,
-      "content": "If f(x)=x^2+1, f(4)=",
-      "options": [
-        "15",
-        "16",
-        "17"
-      ],
-      "correctIndex": 2,
-      "tags": [
-        "functions"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 5,
-      "content": "A triangle angles sum is:",
-      "options": [
-        "90\u00b0",
-        "180\u00b0",
-        "360\u00b0"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "geometry"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 5,
-      "content": "Probability of getting heads on a fair coin is:",
-      "options": [
-        "1/4",
-        "1/2",
-        "3/4"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "probability"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 5,
-      "content": "2/3 of 45 equals:",
-      "options": [
-        "20",
-        "30",
-        "35"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "fractions"
-      ]
-    },
-    {
-      "category": "MATHS_BASICS",
-      "difficulty": 5,
-      "content": "Solve: 3(x - 2) = 12",
-      "options": [
-        "4",
-        "5",
-        "6"
-      ],
-      "correctIndex": 2,
-      "tags": [
-        "algebra"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
+      "category": "DISCRETE_MATHEMATICS",
+      "subCategory": "M6",
       "difficulty": 1,
-      "content": "What is a variable in programming?",
-      "options": [
-        "A place to store a value",
-        "A type of computer",
-        "An internet browser"
+      "variants": [
+        {
+          "content": "Guidance: a mod n gives the remainder when a is divided by n. Example: 17 mod 5 = 2, because 17 = 3 x 5 + 2.\n\nWhat is 23 mod 7?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: a mod n gives the remainder when a is divided by n. Example: 17 mod 5 = 2, because 17 = 3 x 5 + 2.\n\nWhat is 10 mod 7?",
+          "correctIndex": 2
+        }
       ],
-      "correctIndex": 0,
-      "tags": [
-        "variables"
-      ]
+      "options": ["1", "2", "3", "4"]
     },
     {
-      "category": "PROGRAMMING_CONCEPTS",
+      "category": "DISCRETE_MATHEMATICS",
+      "subCategory": "M6",
+      "difficulty": 2,
+      "variants": [
+        {
+          "content": "Guidance: For multiplication with mod, compute the product first, then find the remainder after division.\n\nWhat is (8 x 7) mod 5?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: For multiplication with mod, compute the product first, then find the remainder after division.\n\nWhat is (6 x 3) mod 5?",
+          "correctIndex": 3
+        }
+      ],
+      "options": ["0", "1", "2", "3"]
+    },
+    {
+      "category": "DISCRETE_MATHEMATICS",
+      "subCategory": "M6",
+      "difficulty": 3,
+      "variants": [
+        {
+          "content": "Find the smallest positive integer x such that 3x is congruent to 1 mod 7.",
+          "correctIndex": 2
+        },
+        {
+          "content": "Find the smallest positive integer x such that 3x is congruent to 1 mod 8.",
+          "correctIndex": 0
+        }
+      ],
+      "options": ["3", "4", "5", "6"]
+    },
+    {
+      "category": "PROGRAMMING_BASICS",
+      "subCategory": "P1",
       "difficulty": 1,
-      "content": "Which value type is true/false?",
-      "options": [
-        "Number",
-        "Boolean",
-        "Text"
+      "variants": [
+        {
+          "content": "Guidance: A loop repeats a block of code. Example: if total starts at 0 and a loop adds 1 three times, total becomes 3.\n\nWhat is the value of total after this loop finishes?\n\ntotal = 0\nfor i in [1 to 4]:\n    total = total + 2",
+          "correctIndex": 2
+        },
+        {
+          "content": "Guidance: A loop repeats a block of code. Example: if total starts at 0 and a loop adds 1 three times, total becomes 3.\n\nWhat is the value of total after this loop finishes?\n\ntotal = 0\nfor i in [1 to 5]:\n    total = total + 2",
+          "correctIndex": 3
+        }
       ],
-      "correctIndex": 1,
-      "tags": [
-        "types"
-      ]
+      "options": ["4", "6", "8", "10"]
     },
     {
-      "category": "PROGRAMMING_CONCEPTS",
+      "category": "PROGRAMMING_BASICS",
+      "subCategory": "P1",
+      "difficulty": 2,
+      "variants": [
+        {
+          "content": "Guidance: In nested loops, the inner loop runs fully each time the outer loop runs. Multiply the number of outer repeats by the number of inner repeats.\n\nHow many times is Hello printed?\n\nfor i in [1 to 3]:\n    for j in [1 to 2]:\n        print(\"Hello\")",
+          "correctIndex": 2
+        },
+        {
+          "content": "Guidance: In nested loops, the inner loop runs fully each time the outer loop runs. Multiply the number of outer repeats by the number of inner repeats.\n\nHow many times is Hello printed?\n\nfor i in [1 to 3]:\n    for j in [1 to 3]:\n        print(\"Hello\")",
+          "correctIndex": 3
+        }
+      ],
+      "options": ["2", "5", "6", "9"]
+    },
+    {
+      "category": "PROGRAMMING_BASICS",
+      "subCategory": "P1",
+      "difficulty": 3,
+      "variants": [
+        {
+          "content": "What is the value of count when the loop ends?\n\ncount = 0\nfor i in [1 to 10]:\n    if i mod 3 = 0:\n        break\n    count = count + 1",
+          "correctIndex": 1
+        },
+        {
+          "content": "What is the value of count when the loop ends?\n\ncount = 0\nfor i in [1 to 10]:\n    if i mod 2 = 0:\n        break\n    count = count + 1",
+          "correctIndex": 0
+        }
+      ],
+      "options": ["1", "2", "3", "10"]
+    },
+    {
+      "category": "PROGRAMMING_BASICS",
+      "subCategory": "P2",
       "difficulty": 1,
-      "content": "What does an if/else structure do?",
-      "options": [
-        "Repeats code forever",
-        "Chooses between actions",
-        "Stores many values"
+      "variants": [
+        {
+          "content": "Guidance: if/else lets a program choose between actions. If the condition is true, the if branch runs; otherwise, the else branch runs.\n\nWhat does this code print?\n\nage = 16\nif age >= 18:\n    print(\"Adult\")\nelse:\n    print(\"Minor\")",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: if/else lets a program choose between actions. If the condition is true, the if branch runs; otherwise, the else branch runs.\n\nWhat does this code print?\n\nage = 20\nif age >= 18:\n    print(\"Adult\")\nelse:\n    print(\"Minor\")",
+          "correctIndex": 0
+        }
       ],
-      "correctIndex": 1,
-      "tags": [
-        "conditionals"
-      ]
+      "options": ["Adult", "Minor", "Null", "Error"]
     },
     {
-      "category": "PROGRAMMING_CONCEPTS",
+      "category": "PROGRAMMING_BASICS",
+      "subCategory": "P2",
+      "difficulty": 2,
+      "variants": [
+        {
+          "content": "Guidance: In an if/elif/else chain, the program checks conditions from top to bottom and runs the first branch whose condition is true.\n\nWhat does this code print?\n\nscore = 72\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelif score >= 50:\n    print(\"C\")\nelse:\n    print(\"F\")",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: In an if/elif/else chain, the program checks conditions from top to bottom and runs the first branch whose condition is true.\n\nWhat does this code print?\n\nscore = 65\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelif score >= 50:\n    print(\"C\")\nelse:\n    print(\"F\")",
+          "correctIndex": 2
+        }
+      ],
+      "options": ["A", "B", "C", "F"]
+    },
+    {
+      "category": "PROGRAMMING_BASICS",
+      "subCategory": "P2",
+      "difficulty": 3,
+      "variants": [
+        {
+          "content": "What does this code print?\n\nx = 4\ny = 9\n1f x > 3:\n    if y > 10:\n        print(\"Both big\")\n    else:\n        print(\"X is big\")\nelse:\n    print(\"Neither\")",
+          "correctIndex": 3
+        },
+        {
+          "content": "What does this code print?\n\nx = 4\ny = 9\nif x > 3:\n    if y > 10:\n        print(\"Both big\")\n    else:\n        print(\"X is big\")\nelse:\n    print(\"Neither\")",
+          "correctIndex": 1
+        }
+      ],
+      "options": ["Both big", "X is big", "Neither", "It does not compile"]
+    },
+    {
+      "category": "PROGRAMMING_BASICS",
+      "subCategory": "P3",
       "difficulty": 1,
-      "content": "A loop is mainly used to:",
-      "options": [
-        "Repeat steps",
-        "Draw graphics only",
-        "Rename files"
+      "variants": [
+        {
+          "content": "Guidance: A recursive function calls itself with a smaller input until it reaches a stopping condition, called the base case. Work down step by step.\n\nWhat does countdown(3) return?\n\nfunction countdown(n):\n    if n = 0:\n        return 0\n    return n + countdown(n - 1)",
+          "correctIndex": 2
+        },
+        {
+          "content": "Guidance: A recursive function calls itself with a smaller input until it reaches a stopping condition, called the base case. Work down step by step.\n\nWhat does step(3) return?\n\nfunction step(n):\n    if n = 0:\n        return 0\n    return 3 + step(n - 1)",
+          "correctIndex": 3
+        }
       ],
-      "correctIndex": 0,
-      "tags": [
-        "loops"
-      ]
+      "options": ["0", "3", "6", "9"]
     },
     {
-      "category": "PROGRAMMING_CONCEPTS",
+      "category": "PROGRAMMING_BASICS",
+      "subCategory": "P3",
       "difficulty": 2,
-      "content": "A function is best described as:",
-      "options": [
-        "A reusable block of steps",
-        "A random value",
-        "A hardware part"
+      "variants": [
+        {
+          "content": "Guidance: Follow the recursive calls until the base case. Then multiply the results back upward.\n\nWhat does function(4) return?\n\ndef function(n):\n    if n <= 1:\n        return 1\n    return n * function(n - 1)",
+          "correctIndex": 2
+        },
+        {
+          "content": "Guidance: Follow the recursive calls until the base case. Then multiply the results back upward.\n\nWhat does power2(4) return?\n\ndef power2(n):\n    if n = 0:\n        return 1\n    return 2 * power2(n - 1)",
+          "correctIndex": 1
+        }
       ],
-      "correctIndex": 0,
-      "tags": [
-        "functions"
-      ]
+      "options": ["12", "16", "24", "10"]
     },
     {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 2,
-      "content": "Input to a function means:",
-      "options": [
-        "Data provided to it",
-        "Its final answer only",
-        "Its file name"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "functions"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 2,
-      "content": "What is an algorithm?",
-      "options": [
-        "A social media app",
-        "Step-by-step instructions",
-        "A screen pixel"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "algorithm"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 2,
-      "content": "A bug in software is:",
-      "options": [
-        "An insect in keyboard",
-        "An error in code or logic",
-        "A new feature"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "debugging"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 2,
-      "content": "Debugging means:",
-      "options": [
-        "Finding and fixing errors",
-        "Writing only comments",
-        "Compiling twice"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "debugging"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 2,
-      "content": "Which structure stores multiple ordered values?",
-      "options": [
-        "List/Array",
-        "Single Boolean",
-        "If statement"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "data-structures"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
+      "category": "PROGRAMMING_BASICS",
+      "subCategory": "P3",
       "difficulty": 3,
-      "content": "If a list has 5 items and starts at index 0, last index is:",
-      "options": [
-        "3",
-        "4",
-        "5"
+      "variants": [
+        {
+          "content": "What does fibo(6) return?\n\ndef fibo(n):\n    if n <= 1:\n        return n\n    return fibo(n - 1) + fibo(n - 2)",
+          "correctIndex": 1
+        },
+        {
+          "content": "What does fibo(7) return?\n\ndef fibo(n):\n    if n <= 1:\n        return n\n    return fibo(n - 1) + fibo(n - 2)",
+          "correctIndex": 2
+        }
       ],
-      "correctIndex": 1,
-      "tags": [
-        "indexing"
-      ]
+      "options": ["5", "8", "13", "6"]
     },
     {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 3,
-      "content": "What does \"return\" usually do in a function?",
-      "options": [
-        "Ends with a value output",
-        "Starts a loop",
-        "Creates a variable type"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "functions"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 3,
-      "content": "Which is language-neutral pseudocode?",
-      "options": [
-        "for each item in list",
-        "public static void main",
-        "SELECT * FROM table"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "pseudocode"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 3,
-      "content": "What is the purpose of comments in code?",
-      "options": [
-        "Explain intent to humans",
-        "Speed up CPU directly",
-        "Replace tests"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "readability"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 3,
-      "content": "What happens in an infinite loop?",
-      "options": [
-        "Loop never stops by itself",
-        "Program always crashes instantly",
-        "Variables disappear"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "loops"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 3,
-      "content": "Which is an example of input/output behavior?",
-      "options": [
-        "Input 3 -> Output 9",
-        "Output always unknown",
-        "Input not needed ever"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "functions"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 4,
-      "content": "A condition like score >= 50 checks:",
-      "options": [
-        "Comparison truth",
-        "Memory size",
-        "File location"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "conditionals"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 4,
-      "content": "Which is most important for beginner programs?",
-      "options": [
-        "Correctness",
-        "Using many libraries",
-        "Long variable names only"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "fundamentals"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 4,
-      "content": "What is \"syntax\" in programming?",
-      "options": [
-        "Rules for writing valid statements",
-        "A computer brand",
-        "A network protocol"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "syntax"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 4,
-      "content": "Why use functions instead of repeated code?",
-      "options": [
-        "Reuse and clarity",
-        "Increase typing",
-        "Hide all outputs"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "functions"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 5,
-      "content": "Which set lists only programming languages?",
-      "options": [
-        "Python, Java, JavaScript",
-        "HTML, Router, Mouse",
-        "Excel, Folder, CPU"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "languages"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 5,
-      "content": "If condition is false in if/else, which branch runs?",
-      "options": [
-        "if branch",
-        "else branch",
-        "both branches"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "conditionals"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 5,
-      "content": "A test case is used to:",
-      "options": [
-        "Check expected behavior",
-        "Decorate UI",
-        "Compress files"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "testing"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 5,
-      "content": "What is abstraction?",
-      "options": [
-        "Focus on essentials, hide details",
-        "Avoid using variables",
-        "Never use functions"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "abstraction"
-      ]
-    },
-    {
-      "category": "PROGRAMMING_CONCEPTS",
-      "difficulty": 5,
-      "content": "Which is a good first step when code fails?",
-      "options": [
-        "Read the error and reproduce issue",
-        "Delete project immediately",
-        "Change keyboard"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "debugging"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
+      "category": "INTRODUCTION_A_L_INFORMATIQUE",
+      "subCategory": "C1",
       "difficulty": 1,
-      "content": "Best first step for a complex task is to:",
-      "options": [
-        "Break it into smaller parts",
-        "Guess final answer",
-        "Skip understanding"
+      "variants": [
+        {
+          "content": "Guidance: Computers can represent numbers in binary using only 0s and 1s. For four bits, the place values are 8, 4, 2, 1. Add the values where the digit is 1. Example: 1011 = 8 + 0 + 2 + 1 = 11.\n\nUsing binary place values 8, 4, 2, 1, what is 0110 in decimal?",
+          "correctIndex": 2
+        },
+        {
+          "content": "Guidance: Computers can represent numbers in binary using only 0s and 1s. For four bits, the place values are 8, 4, 2, 1. Add the values where the digit is 1. Example: 1011 = 8 + 0 + 2 + 1 = 11.\n\nUsing binary place values 8, 4, 2, 1, what is 1100 in decimal?",
+          "correctIndex": 3
+        }
       ],
-      "correctIndex": 0,
-      "tags": [
-        "decomposition"
-      ]
+      "options": ["3", "5", "6", "12"]
     },
     {
-      "category": "PROBLEM_SOLVING_SKILLS",
+      "category": "INTRODUCTION_A_L_INFORMATIQUE",
+      "subCategory": "C1",
+      "difficulty": 2,
+      "variants": [
+        {
+          "content": "Guidance: For 8-bit binary, use place values 128, 64, 32, 16, 8, 4, 2, 1. Choose the positions that add up to the decimal number.\n\nWhat is the 8-bit binary representation of the decimal number 45?",
+          "correctIndex": 0
+        },
+        {
+          "content": "Guidance: For 8-bit binary, use place values 128, 64, 32, 16, 8, 4, 2, 1. Choose the positions that add up to the decimal number.\n\nWhat is the 8-bit binary representation of the decimal number 41?",
+          "correctIndex": 3
+        }
+      ],
+      "options": ["00101101", "00110101", "01001101", "00101001"]
+    },
+    {
+      "category": "INTRODUCTION_A_L_INFORMATIQUE",
+      "subCategory": "C1",
+      "difficulty": 3,
+      "variants": [
+        {
+          "content": "What is the result of adding 0111 + 0101 in binary?",
+          "correctIndex": 1
+        },
+        {
+          "content": "What is the result of adding 0111 + 0111 in binary?",
+          "correctIndex": 2
+        }
+      ],
+      "options": ["1010", "1100", "1110", "1001"]
+    },
+    {
+      "category": "INTRODUCTION_A_L_INFORMATIQUE",
+      "subCategory": "C2",
       "difficulty": 1,
-      "content": "An edge case is:",
-      "options": [
-        "A normal common case",
-        "An unusual boundary situation",
-        "A typo only"
+      "variants": [
+        {
+          "content": "Guidance: Logic gates process binary inputs. AND outputs 1 only when both inputs are 1. OR outputs 1 when at least one input is 1. NOT flips 0 to 1 and 1 to 0.\n\nAn OR gate receives inputs A = 0 and B = 1. What is the output?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: Logic gates process binary inputs. AND outputs 1 only when both inputs are 1. OR outputs 1 when at least one input is 1. NOT flips 0 to 1 and 1 to 0.\n\nAn AND gate receives inputs A = 1 and B = 0. What is the output?",
+          "correctIndex": 0
+        }
       ],
-      "correctIndex": 1,
-      "tags": [
-        "testing"
-      ]
+      "options": ["0", "1", "2", "3"]
     },
     {
-      "category": "PROBLEM_SOLVING_SKILLS",
+      "category": "INTRODUCTION_A_L_INFORMATIQUE",
+      "subCategory": "C2",
+      "difficulty": 2,
+      "variants": [
+        {
+          "content": "Guidance: Solve circuits step by step. First compute the output of the first gate, then use that result as input for the next gate.\n\nA = 1, B = 0, C = 1. Step 1: AND takes A and B. Step 2: OR takes that result and C. What is the final output?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: Solve circuits step by step. First compute the output of the first gate, then use that result as input for the next gate.\n\nA = 1, B = 0, C = 0. Step 1: AND takes A and B. Step 2: OR takes that result and C. What is the final output?",
+          "correctIndex": 0
+        }
+      ],
+      "options": ["0", "1", "0 again", "2"]
+    },
+    {
+      "category": "INTRODUCTION_A_L_INFORMATIQUE",
+      "subCategory": "C2",
+      "difficulty": 3,
+      "variants": [
+        {
+          "content": "For output = (A AND B) OR (NOT C), how many of the 8 input combinations produce output 1?",
+          "correctIndex": 2
+        },
+        {
+          "content": "For output = NOT (A AND B), how many of the 8 input combinations produce output 1?",
+          "correctIndex": 3
+        }
+      ],
+      "options": ["3", "4", "5", "6"]
+    },
+    {
+      "category": "INTRODUCTION_A_L_INFORMATIQUE",
+      "subCategory": "C3",
       "difficulty": 1,
-      "content": "If your first idea fails, you should:",
-      "options": [
-        "Stop immediately",
-        "Try another approach",
-        "Ignore results"
+      "variants": [
+        {
+          "content": "Guidance: Linear search checks each element one by one from left to right until it finds the target. Example: finding 4 in [7, 2, 4, 9] takes 3 checks.\n\nHow many steps does it take to find 9 in [3, 6, 1, 9, 4] using linear search?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: Linear search checks each element one by one from left to right until it finds the target. Example: finding 4 in [7, 2, 4, 9] takes 3 checks.\n\nHow many steps does it take to find 1 in [3, 6, 1, 9, 4] using linear search?",
+          "correctIndex": 0
+        }
       ],
-      "correctIndex": 1,
-      "tags": [
-        "persistence"
-      ]
+      "options": ["3", "4", "5", "9"]
     },
     {
-      "category": "PROBLEM_SOLVING_SKILLS",
+      "category": "INTRODUCTION_A_L_INFORMATIQUE",
+      "subCategory": "C3",
       "difficulty": 2,
-      "content": "Why check your answer with examples?",
-      "options": [
-        "To validate reasoning",
-        "To make it longer",
-        "To avoid thinking"
+      "variants": [
+        {
+          "content": "Guidance: Bubble sort compares adjacent elements and swaps them if they are not in ascending order. One full pass goes from left to right once.\n\nAfter one full pass of bubble sort on [5, 3, 8, 1], what does the list look like?",
+          "correctIndex": 1
+        },
+        {
+          "content": "Guidance: Bubble sort compares adjacent elements and swaps them if they are not in ascending order. One full pass goes from left to right once.\n\nAfter one full pass of bubble sort on [3, 5, 1, 8], what does the list look like?",
+          "correctIndex": 2
+        }
       ],
-      "correctIndex": 0,
-      "tags": [
-        "validation"
-      ]
+      "options": ["[1, 3, 5, 8]", "[3, 5, 1, 8]", "[3, 1, 5, 8]", "[5, 3, 1, 8]"]
     },
     {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 2,
-      "content": "A helpful debugging strategy is to:",
-      "options": [
-        "Trace steps one by one",
-        "Change everything at once",
-        "Never inspect inputs"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "debugging"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 2,
-      "content": "When two solutions work, prefer the one that is:",
-      "options": [
-        "Clearer and simpler",
-        "More complicated",
-        "Harder to explain"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "tradeoffs"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 2,
-      "content": "What helps avoid missing details?",
-      "options": [
-        "Writing steps/checklist",
-        "Relying on memory only",
-        "Skipping constraints"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "organization"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 2,
-      "content": "A constraint in a problem is:",
-      "options": [
-        "A requirement/limit",
-        "A random opinion",
-        "A decoration"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "constraints"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
+      "category": "INTRODUCTION_A_L_INFORMATIQUE",
+      "subCategory": "C3",
       "difficulty": 3,
-      "content": "If output is wrong, where to start?",
-      "options": [
-        "Compare expected vs actual at each step",
-        "Rewrite everything first",
-        "Change problem statement"
+      "variants": [
+        {
+          "content": "How many full bubble-sort passes are needed for [5, 3, 8, 1] to be sorted?",
+          "correctIndex": 3
+        },
+        {
+          "content": "How many full bubble-sort passes are needed for [2, 3, 1, 4] to be sorted?",
+          "correctIndex": 2
+        }
       ],
-      "correctIndex": 0,
-      "tags": [
-        "debugging"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 3,
-      "content": "Pattern recognition helps by:",
-      "options": [
-        "Reusing known ideas",
-        "Avoiding all analysis",
-        "Removing need for tests"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "patterns"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 3,
-      "content": "What is a heuristic?",
-      "options": [
-        "Guaranteed perfect method",
-        "Practical rule of thumb",
-        "Programming language"
-      ],
-      "correctIndex": 1,
-      "tags": [
-        "heuristics"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 3,
-      "content": "When requirements change, you should:",
-      "options": [
-        "Re-check assumptions and adapt",
-        "Ignore change",
-        "Submit old solution"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "adaptation"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 3,
-      "content": "Good collaboration in solving includes:",
-      "options": [
-        "Explaining reasoning clearly",
-        "Keeping all ideas private",
-        "Avoiding questions"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "communication"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 3,
-      "content": "To compare algorithms, check:",
-      "options": [
-        "Time and memory usage",
-        "Font size",
-        "File extension"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "complexity"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 3,
-      "content": "Why test boundary inputs like 0?",
-      "options": [
-        "They reveal hidden errors",
-        "They are never useful",
-        "They always pass"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "edge-cases"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 4,
-      "content": "If a process has many steps, best practice is:",
-      "options": [
-        "Verify each step output",
-        "Only check the last step",
-        "Skip intermediate checks"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "verification"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 4,
-      "content": "A flowchart is useful because it:",
-      "options": [
-        "Visualizes decision flow",
-        "Executes code automatically",
-        "Stores database rows"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "planning"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 4,
-      "content": "When stuck, a productive action is:",
-      "options": [
-        "Simplify to a smaller example",
-        "Randomize all variables",
-        "Ignore constraints"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "strategy"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 4,
-      "content": "What does \"iterate on a solution\" mean?",
-      "options": [
-        "Improve it through repeated refinements",
-        "Repeat same mistake",
-        "Never test"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "iteration"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 4,
-      "content": "Which behavior improves reliability?",
-      "options": [
-        "Testing both normal and unusual cases",
-        "Testing only easiest case",
-        "No testing if confident"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "testing"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 5,
-      "content": "A strong final check before submission is:",
-      "options": [
-        "Review requirements and outputs match",
-        "Only spell-check comments",
-        "Rename variables"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "review"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 5,
-      "content": "If two teammates disagree, best next step is:",
-      "options": [
-        "Compare evidence and test examples",
-        "Choose randomly",
-        "Stop discussion"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "collaboration"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 5,
-      "content": "Root cause analysis asks:",
-      "options": [
-        "What underlying reason caused the issue",
-        "Who wrote the code",
-        "Which color is best"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "analysis"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 5,
-      "content": "What increases confidence in a solution?",
-      "options": [
-        "Consistent results across multiple tests",
-        "One lucky correct run",
-        "Very long code"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "validation"
-      ]
-    },
-    {
-      "category": "PROBLEM_SOLVING_SKILLS",
-      "difficulty": 5,
-      "content": "A minimal reproducible example is useful because it:",
-      "options": [
-        "Isolates the problem clearly",
-        "Hides the issue",
-        "Adds unrelated features"
-      ],
-      "correctIndex": 0,
-      "tags": [
-        "debugging"
-      ]
+      "options": ["1", "2", "3", "4"]
     }
   ]
 }

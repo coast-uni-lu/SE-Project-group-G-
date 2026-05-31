@@ -1,32 +1,33 @@
 package com.group_g.demo.controller;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.ArrayList;
+
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
-import java.util.LinkedHashMap;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.group_g.demo.dto.Leaderboard;
-import com.group_g.demo.dto.AssessmentRequest;
-import com.group_g.demo.dto.AssessmentSubmit;
 import com.group_g.demo.dto.QuizRequest;
+import com.group_g.demo.dto.QuizRound;
+import com.group_g.demo.dto.QuizStartRequest;
 import com.group_g.demo.dto.QuizSubmit;
 import com.group_g.demo.model.FinalResult;
-import com.group_g.demo.model.AssessmentItem;
+import com.group_g.demo.model.QuizzCategory;
 import com.group_g.demo.model.QuizQuestion;
 import com.group_g.demo.repository.LeaderboardRepository;
-import com.group_g.demo.service.AssessmentService;
 import com.group_g.demo.service.QuizService;
 
-//this class has all the API link used by the .html file
-//learned through use of LLM, youtube tutorials and  spring/Rest API documentation
+// API links used by the static HTML page
 @RestController
 @RequestMapping("/api/v1")
 @CrossOrigin(origins = "*")
@@ -34,61 +35,38 @@ public class API {
 
     private static final int MAX_LEADERBOARD_LIMIT = 20;
 
-    private final AssessmentService AssessmentService;
     private final QuizService quizService;
     private final LeaderboardRepository attemptResultRepository;
 
-    public API(AssessmentService AssessmentService, QuizService quizService,
-            LeaderboardRepository attemptResultRepository) {
-        this.AssessmentService = AssessmentService;
+    public API(QuizService quizService, LeaderboardRepository attemptResultRepository) {
         this.quizService = quizService;
         this.attemptResultRepository = attemptResultRepository;
     }
 
-    @GetMapping("/assessment/questions")
-    public ResponseEntity<?> AssessmentQuestions() {
-        // sends assessment questions to the page
+    @PostMapping("/quiz/start")
+    public ResponseEntity<?> startQuiz(@RequestBody QuizStartRequest request) {
         try {
-            return ResponseEntity.ok(AssessmentService.getQuestions());
+            return ResponseEntity.ok(quizRoundFormat(quizService.startQuiz(request)));
         } catch (IllegalArgumentException e) {
             return badRequest(e.getMessage());
         }
     }
 
-    @PostMapping("/assessment/submit")
-    public ResponseEntity<?> submitAssessment(@RequestBody AssessmentRequest request) {
-        // get assessment answers, compute score and create quiz 
+    @GetMapping("/quiz/round")
+    public ResponseEntity<?> currentRound(@RequestParam String sessionId) {
         try {
-            checkAssessmentRequest(request);
-            AssessmentSubmit response = AssessmentService.submit(request);
-            return ResponseEntity.ok(response);
+            return ResponseEntity.ok(quizRoundFormat(quizService.getRoundNB(sessionId)));
+        } catch (IllegalStateException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(error(e.getMessage()));
         } catch (IllegalArgumentException e) {
             return badRequest(e.getMessage());
         }
     }
 
-    @GetMapping("/quiz")
-    public ResponseEntity<?> quiz(@RequestParam String sessionId) {
-        // gets quiz questions
+    @PostMapping("/quiz/round/submit")
+    public ResponseEntity<?> submitRound(@RequestBody QuizRequest request) {
         try {
-            List<QuizQuestion> questions = quizService.getQuiz(sessionId);
-            List<Map<String, Object>> pageQuestions = new ArrayList<>();
-            for (QuizQuestion question : questions) {
-                pageQuestions.add(quizQuestionFormat(question));
-            }
-            return ResponseEntity.ok(pageQuestions);
-        } catch (IllegalArgumentException e) {
-            return badRequest(e.getMessage());
-        }
-    }
-
-    @PostMapping("/quiz/submit")
-    public ResponseEntity<?> submitQuiz(@RequestBody QuizRequest request) {
-        // get answer, return scoee
-        try {
-            checkQuizRequest(request);
-            QuizSubmit response = quizService.submitQuiz(request);
-            return ResponseEntity.ok(response);
+            return ResponseEntity.ok(quizSubmitFormat(quizService.submitRound(request)));
         } catch (IllegalStateException e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(error(e.getMessage()));
         } catch (IllegalArgumentException e) {
@@ -98,7 +76,6 @@ public class API {
 
     @GetMapping("/leaderboard")
     public ResponseEntity<?> leaderboard(@RequestParam(defaultValue = "10") int limit) {
-        // gets best scores for the leaderboard table
         try {
             int safeLimit = Math.max(1, Math.min(limit, MAX_LEADERBOARD_LIMIT));
             List<FinalResult> results = attemptResultRepository
@@ -113,36 +90,56 @@ public class API {
         }
     }
 
-    private void checkAssessmentRequest(AssessmentRequest request) {
-        // to force entering a nickname, ***might refactor to offer choice or not to get ranked***
-        if (request == null || request.getNickname() == null || request.getNickname().isBlank()) {
-            throw new IllegalArgumentException("For now, you are required to enter a Nickname");
-        }
-        // basic check if all answers have been answered
-        if (request.getAnswers() == null || request.getAnswers().isEmpty()) {
-            throw new IllegalArgumentException("You didn't answer all the questions");
-        }
+    private Map<String, Object> quizSubmitFormat(QuizSubmit submit) {
+        Map<String, Object> view = new LinkedHashMap<>();
+        view.put("sessionId", submit.getSessionId());
+        view.put("nickname", submit.getNickname());
+        view.put("completed", submit.isCompleted());
+        view.put("nextRound", submit.getNextRound() == null ? null : quizRoundFormat(submit.getNextRound()));
+        view.put("totalQuestions", submit.getTotalQuestions());
+        view.put("correctAnswers", submit.getCorrectAnswers());
+        view.put("finalScore", submit.getFinalScore());
+        view.put("sectionScores", categoryMapFormat(submit.getSectionScores()));
+        view.put("sectionMaxScores", categoryMapFormat(submit.getSectionMaxScores()));
+        view.put("bookRecommendations", submit.getBookRecommendations());
+        view.put("emailSent", submit.isEmailSent());
+        return view;
     }
 
-    private void checkQuizRequest(QuizRequest request) {
-        // session ID check, ***need to check if it is really needed?***
-        if (request == null || request.getSessionId() == null || request.getSessionId().isBlank()) {
-            throw new IllegalArgumentException("Session ID error. please refer to the IT guy");
+    private Map<String, Object> quizRoundFormat(QuizRound round) {
+        Map<String, Object> view = new LinkedHashMap<>();
+        view.put("sessionId", round.getSessionId());
+        view.put("round", round.getRound());
+        view.put("maxRounds", round.getMaxRounds());
+        view.put("sectionScores", categoryMapFormat(round.getSectionScores()));
+        List<Map<String, Object>> questions = new ArrayList<>();
+        for (QuizQuestion question : round.getQuestions()) {
+            questions.add(quizQuestionFormat(question));
         }
-        // basic check if all answers have been answered
-        if (request.getAnswers() == null || request.getAnswers().isEmpty()) {
-            throw new IllegalArgumentException("You didn't answer all the questions");
-        }
+        view.put("questions", questions);
+        return view;
     }
 
     private Map<String, Object> quizQuestionFormat(QuizQuestion question) {
-        // removes answers and other useless field for userexperience before sending question to frontend
         Map<String, Object> view = new LinkedHashMap<>();
         view.put("id", question.getId());
         view.put("content", question.getContent());
         view.put("category", question.getCategory());
+        view.put("categoryLabel", question.getCategory().getDisplayName());
+        view.put("subCategory", question.getSubCategory());
         view.put("difficulty", question.getDifficulty());
         view.put("options", question.getOptions());
+        return view;
+    }
+
+    private Map<String, Integer> categoryMapFormat(Map<QuizzCategory, Integer> categoryMap) {
+        Map<String, Integer> view = new LinkedHashMap<>();
+        if (categoryMap == null) {
+            return view;
+        }
+        for (QuizzCategory category : QuizzCategory.values()) {
+            view.put(category.getDisplayName(), categoryMap.getOrDefault(category, 0));
+        }
         return view;
     }
 
@@ -156,7 +153,6 @@ public class API {
     }
 
     private ResponseEntity<Map<String, String>> badRequest(String message) {
-        // returns errors in the same format everywhere
         return ResponseEntity.badRequest().body(error(message));
     }
 

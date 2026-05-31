@@ -1,204 +1,596 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CS Quiz Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS/BINFO Quiz</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #eeeeee; margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; background: white; border: 1px solid #cccccc; padding: 20px; }
+        :root {
+            --ink: #1d2433;
+            --muted: #697386;
+            --line: #dfe5ef;
+            --panel: #ffffff;
+            --panel-soft: #f8fbff;
+            --blue: #2563eb;
+            --green: #10b981;
+            --yellow: #f59e0b;
+            --cyan: #06b6d4;
+            --shadow: 0 18px 45px rgba(31, 41, 55, 0.14);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 28rem),
+                radial-gradient(circle at top right, rgba(16, 185, 129, 0.14), transparent 24rem),
+                linear-gradient(135deg, #eef6ff 0%, #fffdf2 50%, #f3fff8 100%);
+            padding: 28px;
+        }
+
+        .container {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+        }
+
+        .app-shell {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .hero {
+            padding: 30px;
+            color: #fff;
+            background: linear-gradient(120deg, rgba(37, 99, 235, 0.96), rgba(6, 182, 212, 0.88));
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 42px;
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .hero p {
+            margin: 0;
+            max-width: 760px;
+            font-size: 17px;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .content {
+            padding: 28px;
+        }
+
         .hidden { display: none; }
-        .block { margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid #ececec; }
-        .tag { display: inline-block; background: #2f65c8; color: #fff; padding: 3px 8px; font-size: 12px; }
-        button { border: 1px solid #1f7a42; background: #2da75b; color: #fff; padding: 9px 12px; cursor: pointer; }
-        input[type="text"] { padding: 8px; width: 240px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border-bottom: 1px solid #ececec; padding: 8px; text-align: left; }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 340px;
+            gap: 22px;
+            align-items: start;
+        }
+
+        .welcome-card,
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .welcome-card {
+            background: linear-gradient(135deg, #fff7ed, #ecfeff);
+            border-color: #fed7aa;
+        }
+
+        h2, h3 {
+            margin: 0 0 12px;
+        }
+
+        .helper-text {
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        label.field-label {
+            display: block;
+            margin: 0 0 8px;
+            font-weight: 800;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            border: 2px solid #dbeafe;
+            border-radius: 12px;
+            padding: 13px 14px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .field-group {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        button {
+            border: 0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--blue), var(--cyan));
+            color: #fff;
+            padding: 13px 18px;
+            font-weight: 900;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+        }
+
+        button:disabled {
+            cursor: wait;
+            opacity: 0.7;
+        }
+
+        .progress-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .progress-item {
+            border-radius: 14px;
+            padding: 13px;
+            color: #fff;
+            font-weight: 900;
+            text-align: center;
+            background: #94a3b8;
+        }
+
+        .progress-item.active {
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
+        }
+
+        .question-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .block {
+            background: var(--panel-soft);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 18px;
+        }
+
+        .question-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 7px 10px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .question-number {
+            color: var(--muted);
+            font-weight: 800;
+        }
+
+        .question-text {
+            white-space: pre-wrap;
+            font-size: 17px;
+            font-weight: 750;
+            line-height: 1.45;
+        }
+
+        .option-list {
+            display: grid;
+            gap: 9px;
+            margin-top: 14px;
+        }
+
+        .option {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            border: 1px solid #e5e7eb;
+            background: #fff;
+            border-radius: 12px;
+            padding: 11px 12px;
+            cursor: pointer;
+        }
+
+        .quiz-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 22px;
+        }
+
+        .results-hero {
+            display: grid;
+            grid-template-columns: 210px minmax(0, 1fr);
+            gap: 24px;
+            align-items: center;
+            background: linear-gradient(135deg, #1d4ed8, #0891b2);
+            color: #fff;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 22px;
+        }
+
+        .score-ring {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background:
+                radial-gradient(circle at center, #ffffff 0 55%, transparent 56%),
+                conic-gradient(#facc15 var(--score-angle), rgba(255, 255, 255, 0.24) 0);
+            color: #111827;
+            text-align: center;
+        }
+
+        .score-ring strong {
+            display: block;
+            font-size: 44px;
+            line-height: 1;
+        }
+
+        .score-ring span {
+            font-weight: 900;
+            color: var(--muted);
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .category-list,
+        .book-grid {
+            display: grid;
+            gap: 10px;
+        }
+
+        .category-row,
+        .book-card {
+            padding: 13px;
+            border-radius: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .category-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #eff6ff;
+            color: #1e40af;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        th, td {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 11px;
+            text-align: left;
+        }
+
+        @media (max-width: 820px) {
+            body { padding: 14px; }
+            .intro-grid,
+            .results-hero,
+            .result-grid,
+            .progress-strip {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 34px; }
+        }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>CS Quiz Project</h1>
+    <div class="app-shell">
+        <header class="hero">
+            <h1>CS/BINFO Quiz</h1>
+            <p>Answer up to three rounds. Test yourself and get book recommended.</p>
+            <p>You hopfully won't have to read them entirelly</p>
+        </header>
 
-    <section id="nicknameStep">
-        <p>This is our second year Software Engineering project to assess if students are ready for a cursus in CS/BINFO and recommend books based on what they need to prepare for if they want to.</p>
-        <p>Avoid using your personnal name and enter a nickname for the leaderboard:</p>
-        <input id="nicknameInput" type="text" maxlength="30" placeholder="nickname" />
-        <button id="confirmNicknameBtn" onclick="startAssessment()">Confirm nickname</button>
-    </section>
+        <main class="content">
+            <section id="startStep">
+                <div class="intro-grid">
+                    <div class="welcome-card">
+                        <h2>Progressive quiz</h2>
+                        <p class="helper-text">3 step quiz, first step is level 1.</p>
+                        <p class="helper-text">if you pass a question you unlock it's level 2 difficulty and so on.</p>
+                    </div>
+                    <div class="panel">
+                        <div class="field-group">
+                            <div>
+                                <label class="field-label" for="nicknameInput">Nickname</label>
+                                <input id="nicknameInput" type="text" maxlength="30" placeholder="Not your real name">
+                            </div>
+                            <div>
+                                <label class="field-label" for="emailInput">Email <span style="color: var(--muted); font-weight: 700;">(optional)</span></label>
+                                <input id="emailInput" type="email" maxlength="120" placeholder="If you want your results emailed">
+                            </div>
+                        </div>
+                        <button id="startQuizBtn" onclick="startQuiz()">Start quiz</button>
+                    </div>
+                </div>
+            </section>
 
-    <section id="assessmentStep" class="hidden">
-        <h2>Short starter questions</h2>
-        <div id="assessmentQuestions"></div>
-        <button onclick="submitAssessment()">Continue to quiz</button>
-    </section>
+            <section id="quizStep" class="hidden">
+                <div id="roundProgress" class="progress-strip"></div>
+                <div class="panel">
+                    <h2 id="roundTitle">Round 1</h2>
+                    <p id="roundHelp" class="helper-text"></p>
+                    <div id="quizQuestions" class="question-grid"></div>
+                    <div class="quiz-actions">
+                        <button id="submitRoundBtn" onclick="submitRound()">Next round</button>
+                    </div>
+                </div>
+            </section>
 
-    <section id="quizStep" class="hidden">
-        <h2>Main quiz</h2>
-        <div id="quizQuestions"></div>
-        <button onclick="submitQuiz()">Submit quiz</button>
-    </section>
+            <section id="resultStep" class="hidden">
+                <div class="results-hero">
+                    <div id="scoreRing" class="score-ring" style="--score-angle: 0deg;">
+                        <div>
+                            <strong id="scorePoints">0</strong>
+                            <span>out of 120</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 id="resultTitle">Results</h2>
+                        <p id="resultSummary"></p>
+                        <p id="emailStatus" class="hidden"></p>
+                    </div>
+                </div>
 
-    <section id="resultStep" class="hidden">
-        <h2>Results</h2>
-        <p id="resultSummary"></p>
-        <pre id="assessmentScores"></pre>
-        <h3>Leaderboard</h3>
-        <table>
-            <thead><tr><th>Nickname</th><th>Score</th><th>Correct</th><th>Time</th></tr></thead>
-            <tbody id="leaderboardBody"></tbody>
-        </table>
-    </section>
+                <div class="result-grid">
+                    <div class="panel">
+                        <h3>Score by section</h3>
+                        <div id="sectionScores" class="category-list"></div>
+                    </div>
+                    <div class="panel">
+                        <h3>Book recommendations</h3>
+                        <div id="bookRecommendations" class="book-grid"></div>
+                    </div>
+                </div>
+
+                <div class="panel" style="margin-top: 18px;">
+                    <h3>Leaderboard</h3>
+                    <table>
+                        <thead><tr><th>Nickname</th><th>Score</th><th>Correct</th><th>Time</th></tr></thead>
+                        <tbody id="leaderboardBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
 </div>
 
 <script>
-    let nickname = "";
-    let assessmentItems = [];
-    let quizQuestions = [];
     let sessionId = "";
+    let email = "";
+    let currentRound = null;
+    let roundAnswers = {};
 
-    // only shows one page section and hides the other ones for the rest of the steps
     function showStep(id) {
-        ["nicknameStep", "assessmentStep", "quizStep", "resultStep"].forEach(step => {
+        ["startStep", "quizStep", "resultStep"].forEach(step => {
             document.getElementById(step).classList.toggle("hidden", step !== id);
         });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    // enum names formating
-    function formatCategoryLabel(category) {
-        return category
-            .toLowerCase()
-            .split('_')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-    }
-
-    async function startAssessment() {
-        nickname = document.getElementById("nicknameInput").value.trim();
+    async function startQuiz() {
+        const nickname = document.getElementById("nicknameInput").value.trim();
+        email = document.getElementById("emailInput").value.trim();
         if (!nickname) {
             alert("Nickname is required.");
             return;
         }
 
-        const btn = document.getElementById("confirmNicknameBtn");
-        const oldText = btn.innerText;
+        const btn = document.getElementById("startQuizBtn");
         btn.disabled = true;
-        btn.innerText = "Loading...";
-
         try {
-            const res = await fetch('/api/v1/assessment/questions');
+            const res = await fetch("/api/v1/quiz/start", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nickname, email: email || null })
+            });
+            const data = await res.json();
             if (!res.ok) {
-                alert(`Could not load questions. HTTP ${res.status}`);
+                alert(data.error || "Failed to start quiz");
                 return;
             }
-
-            assessmentItems = await res.json();
-            const root = document.getElementById('assessmentQuestions');
-            root.innerHTML = '';
-
-            assessmentItems.forEach((item, idx) => {
-                root.innerHTML += `
-                    <div class="block">
-                        <span class="tag">${formatCategoryLabel(item.category)}</span>
-                        <p><strong>${idx + 1}.</strong> ${item.content}</p>
-                        ${item.options.map((option, optionIndex) =>
-                            `<label><input type="radio" name="assessment-${item.id}" value="${optionIndex}" ${optionIndex === 0 ? 'checked' : ''}> ${option}</label><br>`).join('')}
-                    </div>
-                `;
-            });
-            showStep('assessmentStep');
+            sessionId = data.sessionId;
+            renderRound(data);
+            showStep("quizStep");
         } catch (e) {
-            console.error('Failed to load assessment questions', e);
-            alert("Network/server error while loading assessment questions. Please try again.");
+            console.error(e);
+            alert("Network/server error while starting the quiz.");
         } finally {
             btn.disabled = false;
-            btn.innerText = oldText;
         }
     }
 
-    async function submitAssessment() {
-        const answers = {};
-        for (const item of assessmentItems) {
-            const selected = document.querySelector(`input[name="assessment-${item.id}"]:checked`);
-            if (!selected) {
-                alert('Please answer all assessment items.');
-                return;
-            }
-            answers[item.id] = Number(selected.value);
-        }
+    function renderRound(round) {
+        currentRound = round;
+        roundAnswers = {};
+        document.getElementById("roundTitle").innerText = `Round ${round.round} of ${round.maxRounds}`;
+        document.getElementById("roundHelp").innerText = round.round < round.maxRounds
+            ? `${round.questions.length} active subcategories. Correct answers unlock the next level.`
+            : `${round.questions.length} active subcategories.`;
+        renderRoundProgress(round.round, round.maxRounds);
 
-        const res = await fetch('/api/v1/assessment/submit', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nickname, answers })
-        });
-        const data = await res.json();
-        if (!res.ok) {
-            alert(data.error || 'Failed to submit assessment');
-            return;
-        }
-
-        sessionId = data.sessionId;
-        await loadQuiz();
-    }
-
-    async function loadQuiz() {
-        const res = await fetch(`/api/v1/quiz?sessionId=${encodeURIComponent(sessionId)}`);
-        quizQuestions = await res.json();
-        const root = document.getElementById('quizQuestions');
-        root.innerHTML = '';
-
-        quizQuestions.forEach((question, idx) => {
+        const root = document.getElementById("quizQuestions");
+        root.innerHTML = "";
+        round.questions.forEach((question, idx) => {
             root.innerHTML += `
                 <div class="block">
-                    <span class="tag">${formatCategoryLabel(question.category)} | Diff ${question.difficulty}</span>
-                    <p><strong>${idx + 1}.</strong> ${question.content}</p>
-                    ${question.options.map((option, optionIndex) =>
-                        `<label><input type="radio" name="quiz-${question.id}" value="${optionIndex}"> ${option}</label><br>`).join('')}
+                    <div class="question-head">
+                        <span class="tag">${question.categoryLabel} | ${question.subCategory} | Level ${question.difficulty}</span>
+                        <span class="question-number">${idx + 1}/${round.questions.length}</span>
+                    </div>
+                    <div class="question-text">${iHateHtml(question.content)}</div>
+                    ${renderOptions(question)}
                 </div>
             `;
         });
-        showStep('quizStep');
     }
 
-    async function submitQuiz() {
+    function renderRoundProgress(round, maxRounds) {
+        const root = document.getElementById("roundProgress");
+        root.innerHTML = "";
+        for (let index = 1; index <= maxRounds; index++) {
+            root.innerHTML += `<div class="progress-item ${index === round ? "active" : ""}">Round ${index}</div>`;
+        }
+    }
+
+    function renderOptions(question) {
+        return `<div class="option-list">${question.options.map((option, optionIndex) => `
+            <label class="option">
+                <input type="radio" name="quiz-${question.id}" value="${optionIndex}">
+                <span>${iHateHtml(option)}</span>
+            </label>
+        `).join("")}</div>`;
+    }
+
+    async function submitRound() {
         const answers = {};
-        for (const question of quizQuestions) {
+        for (const question of currentRound.questions) {
             const selected = document.querySelector(`input[name="quiz-${question.id}"]:checked`);
             if (!selected) {
-                alert('Please answer all quiz questions.');
+                alert("Please answer all questions in this round.");
                 return;
             }
             answers[question.id] = Number(selected.value);
         }
 
-        const res = await fetch('/api/v1/quiz/submit', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ sessionId, answers })
-        });
-        const data = await res.json();
-        if (!res.ok) {
-            alert(data.error || 'Failed to submit quiz');
+        const btn = document.getElementById("submitRoundBtn");
+        btn.disabled = true;
+        try {
+            const res = await fetch("/api/v1/quiz/round/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ sessionId, answers })
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                alert(data.error || "Failed to submit round");
+                return;
+            }
+
+            if (data.completed) {
+                renderResults(data);
+                await loadLeaderboard();
+                showStep("resultStep");
+            } else {
+                renderRound(data.nextRound);
+            }
+        } catch (e) {
+            console.error(e);
+            alert("Network/server error while submitting the round.");
+        } finally {
+            btn.disabled = false;
+        }
+    }
+
+    function renderResults(data) {
+        const scoreAngle = Math.max(0, Math.min(120, data.finalScore)) * 3;
+        document.getElementById("scoreRing").style.setProperty("--score-angle", `${scoreAngle}deg`);
+        document.getElementById("scorePoints").innerText = data.finalScore;
+        document.getElementById("resultTitle").innerText = `Results for ${data.nickname}`;
+        document.getElementById("resultSummary").innerText =
+            `You answered ${data.correctAnswers} out of ${data.totalQuestions} attempted questions correctly.`;
+        renderSectionScores(data.sectionScores, data.sectionMaxScores);
+        renderBookRecommendations(data.bookRecommendations);
+        renderEmailStatus(data.emailSent);
+    }
+
+    function renderSectionScores(scores, maxScores) {
+        document.getElementById("sectionScores").innerHTML = Object.entries(scores || {}).map(([section, score]) => `
+            <div class="category-row">
+                <strong>${iHateHtml(section)}</strong>
+                <span>${score}/${maxScores[section] || 30}</span>
+            </div>
+        `).join("");
+    }
+
+    function renderBookRecommendations(books) {
+        document.getElementById("bookRecommendations").innerHTML = (books || []).map(book => `
+            <div class="book-card">
+                <strong>${iHateHtml(book.title)}</strong>
+                <p><strong>Author:</strong> ${iHateHtml(book.author)}</p>
+                <p>${iHateHtml(book.reason)}</p>
+            </div>
+        `).join("");
+    }
+
+    function renderEmailStatus(emailSent) {
+        const root = document.getElementById("emailStatus");
+        if (!email) {
+            root.classList.add("hidden");
+            root.innerText = "";
             return;
         }
+        root.classList.remove("hidden");
+        root.innerText = emailSent ? "Result email sent." : "Email delivery is not configured yet.";
+    }
 
-        document.getElementById('resultSummary').innerText =
-            `${data.nickname}: ${data.finalScore}% (${data.correctAnswers}/${data.totalQuestions})`;
-        document.getElementById('assessmentScores').innerText = JSON.stringify(data.AssessmentScores, null, 2);
-
-        const lbRes = await fetch('/api/v1/leaderboard?limit=10');
-        const leaderboard = await lbRes.json();
-        const tbody = document.getElementById('leaderboardBody');
-        tbody.innerHTML = leaderboard.map(row => `
+    async function loadLeaderboard() {
+        const res = await fetch("/api/v1/leaderboard?limit=10");
+        const leaderboard = await res.json();
+        document.getElementById("leaderboardBody").innerHTML = leaderboard.map(row => `
             <tr>
-              <td>${row.nickname}</td>
-              <td>${row.finalScore}%</td>
+              <td>${iHateHtml(row.nickname)}</td>
+              <td>${row.finalScore}/120</td>
               <td>${row.correctAnswers}/${row.totalQuestions}</td>
               <td>${new Date(row.timestamp).toLocaleString()}</td>
             </tr>
-        `).join('');
+        `).join("");
+    }
 
-        showStep('resultStep');
+    function iHateHtml(value) {
+        return String(value ?? "")
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
     }
 </script>
 </body>

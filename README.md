@@ -1,3 +1,5 @@
+# Video documentation : https://www.youtube.com/watch?v=4G2-xunvTJE
+
 # CS/BINFO Quiz Project
 
 This is a second year student project made with Spring Boot and MongoDB.
@@ -10,7 +12,7 @@ After the quiz, the score is saved and shown on a simple leaderboard.
 
 1. Start MongoDB compass, add a new connection at the URL "mongodb://localhost:27017"
 2. Go into the `demo` folder.
-3. Run: ".\mvnw spring-boot:run" on powershell (preferably launch with admin right)
+3. Run:"cd [This repository path]" then ".\mvnw spring-boot:run" on powershell (preferably launched with admin right)
 4. Then open `http://localhost:8080` in your browser
 
 ## Main files

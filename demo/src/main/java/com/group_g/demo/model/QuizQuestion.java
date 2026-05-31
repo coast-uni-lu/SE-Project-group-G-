@@ -12,27 +12,31 @@ public class QuizQuestion {
     private String id;
     private String content;
     private QuizzCategory category;
+    private String subCategory;
     private int difficulty;
     private List<String> options;
     private int correctIndex;
-    // baseWeight and timesShown are used by QuestionPicker when choosing questions
     private double baseWeight;
     private List<String> tags;
-    private int timesShown;
+    private List<QuestionVariant> variants;
 
-    public QuizQuestion() {
-    }
+    public QuizQuestion() { //needed for Spring, basically we need an empty constructor to 
+                            // create an object before filling it's fields, run time error otherwise
+    }                       //only for when we build an object based on the DB documents
+    
 
-    public QuizQuestion(String content, QuizzCategory category, int difficulty, List<String> options, int correctIndex, double baseWeight,
-            List<String> tags, int timesShown) {
+    public QuizQuestion(String content, QuizzCategory category, String subCategory, int difficulty,
+            List<String> options, int correctIndex, double baseWeight,
+            List<String> tags, List<QuestionVariant> variants) {
         this.content = content;
         this.category = category;
+        this.subCategory = subCategory;
         this.difficulty = difficulty;
         this.options = options;
         this.correctIndex = correctIndex;
         this.baseWeight = baseWeight;
         this.tags = tags;
-        this.timesShown = timesShown;
+        this.variants = variants;
     }
 
     public String getId() {
@@ -45,6 +49,10 @@ public class QuizQuestion {
 
     public QuizzCategory getCategory() {
         return category;
+    }
+
+    public String getSubCategory() {
+        return subCategory;
     }
 
     public int getDifficulty() {
@@ -67,8 +75,8 @@ public class QuizQuestion {
         return tags;
     }
 
-    public int getTimesShown() {
-        return timesShown;
+    public List<QuestionVariant> getVariants() {
+        return variants;
     }
 
     public void setId(String id) {
@@ -81,6 +89,10 @@ public class QuizQuestion {
 
     public void setCategory(QuizzCategory category) {
         this.category = category;
+    }
+
+    public void setSubCategory(String subCategory) {
+        this.subCategory = subCategory;
     }
 
     public void setDifficulty(int difficulty) {
@@ -103,7 +115,7 @@ public class QuizQuestion {
         this.tags = tags;
     }
 
-    public void setTimesShown(int timesShown) {
-        this.timesShown = timesShown;
+    public void setVariants(List<QuestionVariant> variants) {
+        this.variants = variants;
     }
 }
